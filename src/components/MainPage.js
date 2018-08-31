@@ -1,0 +1,1 @@
+//Purpose: Determines the view (login page or dashboard) 

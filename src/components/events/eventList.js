@@ -1,0 +1,1 @@
+//Purpose: Build the event container, loop over each event in the database, and build a list of all events

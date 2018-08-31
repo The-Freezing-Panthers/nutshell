@@ -1,0 +1,1 @@
+//Purpose: Build the article container, loop over each article in the database, and build a list of all articles

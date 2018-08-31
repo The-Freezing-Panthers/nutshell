@@ -1,0 +1,1 @@
+//Purpose: Build the message container, loop over each message in the database, and build a list of all messages
