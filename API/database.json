@@ -1,5 +1,9 @@
 {
-    "users":[],
+    "users":[{
+        "id":1,
+        "username":"jeremiah",
+        "email":"jeremiah@me.com"
+    }],
     "tasks":[],
     "friends":[],
     "messages":[],
