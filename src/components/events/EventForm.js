@@ -18,7 +18,7 @@ export default class EventForm extends Component {
     }
 
     /*
-        Local method for validation, creating animal object, and
+        Local method for validation, creating event object, and
         invoking the function reference passed from parent component
      */
     constructNewEvent = () => {
@@ -27,7 +27,6 @@ export default class EventForm extends Component {
             date: this.state.newDate,
             location: this.state.newLocation
         }
-
         this.props.addEvent(event)
         .then(() => {
             document.querySelector("#newDate").value = ""

@@ -12,10 +12,16 @@
   "articles": [],
   "events": [
     {
-      "title": "new",
-      "date": "2018-09-20",
-      "location": "new",
-      "id": 1
+      "title": "another",
+      "date": "",
+      "location": "one",
+      "id": 2
+    },
+    {
+      "title": "one",
+      "date": "",
+      "location": "more",
+      "id": 3
     }
   ]
 }

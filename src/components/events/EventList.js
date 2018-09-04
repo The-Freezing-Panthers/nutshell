@@ -5,6 +5,7 @@ import EventCard from './EventCard'
 import DataManager from '../../DataManager'
 import EventForm from './EventForm'
 
+
 export default class EventList extends Component {
 
     render() {
@@ -17,7 +18,10 @@ export default class EventList extends Component {
                 <section>
                     {
                         this.props.events.map(event =>
-                            <EventCard key={event.id} event={event} {...this.props} />
+                            <EventCard {...this.props}
+                            key={event.id} 
+                            event={event}
+                            deleteEvent={this.props.deleteEvent} />
                         )
                     }
                 </section>
