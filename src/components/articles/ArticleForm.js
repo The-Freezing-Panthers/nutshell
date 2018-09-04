@@ -31,7 +31,7 @@ export default class ArticleForm extends Component {
 
          // Create the animal and redirect user to animal list
       //    this.props.DataManager.saveArticle(article).then(() => this.props.history.push("/articles"))
-         DataManager.saveData.saveArticle(article).then(() => this.props.history.push("/articles"))
+         DataManager.saveData.saveArticle(article);
    }
 
    render() {
