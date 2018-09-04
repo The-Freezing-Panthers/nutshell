@@ -19,16 +19,10 @@
       "location": "NSS"
     },
     {
-      "title": "new",
-      "date": "",
-      "location": "",
+      "title": "today",
+      "date": "party",
+      "location": "here",
       "id": 2
-    },
-    {
-      "title": "new",
-      "date": "",
-      "location": "",
-      "id": 3
     }
   ]
 }

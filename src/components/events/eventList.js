@@ -15,7 +15,7 @@ export default class EventList extends Component {
             location: document.querySelector("#new-event-location").value
         }
         DataManager.saveData.saveEvent(NewEvent)
-            .then(() => DataManager.getData.getAllEvents())
+            .then(() => DataManager.getData.getEvents())
             .then(events => this.setState({
                 events: events
             })
