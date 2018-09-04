@@ -63,4 +63,4 @@ To start you off, here's an example of what the resources in your API should loo
 
 To help you along, here is a visualization of the features, and behaviors of the application to get you started.
 
-![nutshell features](./image_ios_.jpg)
+![nutshell features](./image_from_ios.jpg)
