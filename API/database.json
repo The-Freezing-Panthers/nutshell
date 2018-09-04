@@ -1,12 +1,34 @@
 {
-    "users":[{
-        "id":1,
-        "username":"jeremiah",
-        "email":"jeremiah@me.com"
-    }],
-    "tasks":[],
-    "friends":[],
-    "messages":[],
-    "articles":[],
-    "events":[]
+  "users": [
+    {
+      "id": 1,
+      "username": "jeremiah",
+      "email": "jeremiah@me.com"
+    }
+  ],
+  "tasks": [],
+  "friends": [],
+  "messages": [],
+  "articles": [],
+  "events": [
+    {
+      "id": 1,
+      "userid": 1,
+      "title": "Birthday Party",
+      "date": "08/23/1992",
+      "location": "NSS"
+    },
+    {
+      "title": "new",
+      "date": "",
+      "location": "",
+      "id": 2
+    },
+    {
+      "title": "new",
+      "date": "",
+      "location": "",
+      "id": 3
+    }
+  ]
 }

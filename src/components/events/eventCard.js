@@ -6,8 +6,8 @@ export default class EventCard extends Component {
     render() {
         return (
             <div key={this.props.event.id} className="eventCard">
-                <h3>{this.props.event.title}</h3>
-                <p>{this.props.event.description}</p>
+                <h3>{this.props.event.date} - {this.props.event.title}</h3>
+                <h4>Location: {this.props.event.location}</h4>
                 <button onClick={() => this.props.deleteEvent(this.props.event.id)}>Delete</button>
             </div>
         )
