@@ -1,8 +1,8 @@
 //Purpose: Determines the view (login page or dashboard) 
 import React, { Component } from 'react';
 import Login from "./login/Login";
-import EventList from './events/EventList'
-import DataManager from '../DataManager'
+import EventList from './events/EventList';
+import DataManager from '../DataManager';
 
 export default class MainPage extends Component {
     state = {
@@ -14,18 +14,18 @@ export default class MainPage extends Component {
     }
 
     componentDidMount() {
-        const userID = JSON.parse(sessionStorage.getItem("userInfo"))[0].id
+        //const userID = JSON.parse(sessionStorage.getItem("credentials"))[0].id
         const newState = {}
 
-        DataManager.getData.getEvents(userID)
+        DataManager.getData.getEvents()
             .then(events => newState.events = events)
-            .then(() => DataManager.getData.getTasks(userID))
+            .then(() => DataManager.getData.getTasks())
             .then(tasks => newState.tasks = tasks)
-            .then(() => DataManager.getData.getArticles(userID))
+            .then(() => DataManager.getData.getArticles())
             .then(articles => newState.articles = articles)
-            .then(() => DataManager.getData.getFriends(userID))
+            .then(() => DataManager.getData.getFriends())
             .then(friends => newState.friends = friends)
-            .then(() => DataManager.getData.getMessages(userID))
+            .then(() => DataManager.getData.getMessages())
             .then(messages => newState.messages = messages)
             .then(() => this.setState(newState))
     }

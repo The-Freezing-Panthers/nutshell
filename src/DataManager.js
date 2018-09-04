@@ -1,4 +1,4 @@
-const remoteURL = "http://localhost:5002"
+const remoteURL = "http://localhost:8088"
 
 const getData = Object.create(null, {
     getUsers: {
@@ -205,3 +205,5 @@ const deleteData = Object.create(null, {
         }
     }
 })
+
+export default {getData, saveData, editData, deleteData}
