@@ -28,9 +28,9 @@ export default class MainPage extends Component {
         ]
     }
 
-    componentDidMount() {
-        //const userID = JSON.parse(sessionStorage.getItem("credentials"))[0].id
-        const newState = {}
+    // componentDidMount() {
+    //     //const userID = JSON.parse(sessionStorage.getItem("credentials"))[0].id
+    //     const newState = {}
 
         // DataManager.getData.getEvents()
         //     .then(events => newState.events = events)
@@ -43,7 +43,7 @@ export default class MainPage extends Component {
         //     .then(() => DataManager.getData.getMessages())
         //     .then(messages => newState.messages = messages)
         //     .then(() => this.setState(newState))
-    }
+    //}
 
 
     render() {

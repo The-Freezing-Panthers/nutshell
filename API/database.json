@@ -10,6 +10,7 @@
   "friends": [],
   "messages": [],
   "articles": [],
+<<<<<<< HEAD
   "events": [
     {
       "id": 1,
@@ -25,4 +26,7 @@
       "id": 2
     }
   ]
+=======
+  "events": []
+>>>>>>> dd2d20d5a18b6a7715ebd07d9d69fa08e9c266ce
 }
