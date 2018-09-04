@@ -1,4 +1,4 @@
-const remoteURL = "localhost:8088"
+const remoteURL = "http://localhost:8088"
 
 const getData = Object.create(null, {
     getUsers: {

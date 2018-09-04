@@ -10,23 +10,12 @@
   "friends": [],
   "messages": [],
   "articles": [],
-<<<<<<< HEAD
   "events": [
     {
-      "id": 1,
-      "userid": 1,
-      "title": "Birthday Party",
-      "date": "08/23/1992",
-      "location": "NSS"
-    },
-    {
-      "title": "today",
-      "date": "party",
-      "location": "here",
-      "id": 2
+      "title": "new",
+      "date": "2018-09-20",
+      "location": "new",
+      "id": 1
     }
   ]
-=======
-  "events": []
->>>>>>> dd2d20d5a18b6a7715ebd07d9d69fa08e9c266ce
 }
