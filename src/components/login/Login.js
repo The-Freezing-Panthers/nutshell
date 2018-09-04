@@ -24,7 +24,7 @@ export default class Login extends Component {
                     alert("You have successfully logged in!")
                 }
                 else {
-                    alert("Email or Password do not match our records!")
+                    alert("Email or Username do not match our records!")
                 }
             })
     }
