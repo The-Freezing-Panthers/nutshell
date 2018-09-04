@@ -72,6 +72,7 @@ const saveData = Object.create(null, {
     },
     saveArticle: {
         value: (article) => {
+            // console.log("executing save article");
         return fetch(`http://${remoteURL}/articles`, {
             method: "POST",
             headers: {
