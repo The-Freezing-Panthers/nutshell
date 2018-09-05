@@ -1,0 +1,11 @@
+.events {
+    border: 1px solid gray;
+    padding: 1em
+}
+
+.eventCard {
+    border: 5px solid rgb(187, 82, 63);
+    margin: 1em;
+    padding: 1em;
+    background-color: tomato
+}
