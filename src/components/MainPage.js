@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import EventList from './events/EventList';
 import DataManager from '../DataManager';
 import ArticleForm from './articles/ArticleForm';
+import MessageList from './messages/messagesList'
 
 export default class MainPage extends Component {
     constructor(props) {
@@ -19,30 +20,36 @@ export default class MainPage extends Component {
     }
 
     addEvent = event => DataManager.saveData.saveEvent(event)
-        .then(() => DataManager.getData.getEvents())
+        .then(() => DataManager.getData.getEvents(this.props.activeUser))
         .then(events => this.setState({
             events: events
         }))
 
     deleteEvent = event => DataManager.deleteData.deleteEvent(event)
-        .then(() => DataManager.getData.getEvents())
+        .then(() => DataManager.getData.getEvents(this.props.activeUser))
         .then(events => this.setState({
             events: events
         }))
 
     editEvent = (eventID, editedEvent) => {
         DataManager.editData.editEvent(eventID, editedEvent)
-        .then(() => DataManager.getData.getEvents())
-        .then(events => this.setState({
-            events: events
-        }))
+            .then(() => DataManager.getData.getEvents(this.props.activeUser))
+            .then(events => this.setState({
+                events: events
+            }))
     }
 
+    addMessage = message => DataManager.saveData.saveMessages(message)
+        .then(() => DataManager.getData.getMessages())
+        .then(messages => this.setState({
+            messages: messages
+        }))
+
+        
     componentDidMount() {
-        //const userID = JSON.parse(sessionStorage.getItem("credentials"))[0].id
         const newState = {}
 
-        DataManager.getData.getEvents()
+        DataManager.getData.getEvents(this.props.activeUser)
             .then(events => newState.events = events)
             //.then(() => DataManager.getData.getTasks())
             //.then(tasks => newState.tasks = tasks)
@@ -50,9 +57,10 @@ export default class MainPage extends Component {
             //.then(articles => newState.articles = articles)
             //.then(() => DataManager.getData.getFriends())
             //.then(friends => newState.friends = friends)
-            //.then(() => DataManager.getData.getMessages())
-            //.then(messages => newState.messages = messages)
+            .then(() => DataManager.getData.getMessages())
+            .then(messages => newState.messages = messages)
             .then(() => this.setState(newState))
+            .then(()=> console.log(this.state))
     }
 
     render() {
@@ -63,7 +71,13 @@ export default class MainPage extends Component {
                     events={this.state.events}
                     addEvent={this.addEvent}
                     deleteEvent={this.deleteEvent}
-                    editEvent={this.editEvent} />
+                    editEvent={this.editEvent}
+                    activeUser={this.props.activeUser}
+                />
+                <MessageList
+                    messages={this.state.messages}
+                    addMessage={this.addMessage}
+                />
                 <ArticleForm />
             </div>
         )

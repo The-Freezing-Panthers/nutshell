@@ -7,7 +7,7 @@ export default class EventForm extends Component {
     state = {
         newTitle: "",
         newDate: "",
-        newLocation: ""
+        newLocation: "",
     }
 
     // Update state whenever an input field is edited
@@ -25,7 +25,8 @@ export default class EventForm extends Component {
         const event = {
             title: this.state.newTitle,
             date: this.state.newDate,
-            location: this.state.newLocation
+            location: this.state.newLocation,
+            userId: this.props.activeUser
         }
         this.props.addEvent(event)
         .then(() => {
@@ -40,11 +41,11 @@ export default class EventForm extends Component {
             <React.Fragment>
                 <fieldset>
                     <label for="new-event-date">Date:</label>
-                    <input id="new-event-date" type="date" id="newDate" onChange={this.handleFieldChange}/><br />
+                    <input  type="date" id="newDate" onChange={this.handleFieldChange}/><br />
                     <label for="new-event-title">Event Name:</label>
-                    <input id="new-event-title" type="text" id="newTitle"onChange={this.handleFieldChange}/><br />
+                    <input  type="text" id="newTitle"onChange={this.handleFieldChange}/><br />
                     <label for="new-event-location">Event Location:</label>
-                    <input id="new-event-location" type="text" id="newLocation"onChange={this.handleFieldChange}/><br />
+                    <input type="text" id="newLocation"onChange={this.handleFieldChange}/><br />
                     <button onClick={this.constructNewEvent}>Add New Event</button>
                 </fieldset>
             </React.Fragment>

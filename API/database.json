@@ -14,11 +14,61 @@
       "email": "j",
       "username": "j",
       "id": 3
+    },
+    {
+      "email": "me",
+      "username": "me",
+      "id": 4
     }
   ],
   "tasks": [],
   "friends": [],
-  "messages": [],
+  "messages": [
+    {
+      "message": "yooooo",
+      "id": 1
+    },
+    {
+      "message": "hello",
+      "id": 2
+    },
+    {
+      "content": "",
+      "id": 3
+    },
+    {
+      "content": "new new new",
+      "id": 4
+    },
+    {
+      "content": "",
+      "id": 5
+    },
+    {
+      "content": "hi",
+      "id": 6
+    },
+    {
+      "content": "WOOHOO",
+      "id": 7
+    },
+    {
+      "content": "new message",
+      "id": 8
+    },
+    {
+      "content": "hello",
+      "id": 9
+    }
+  ],
   "articles": [],
-  "events": []
+  "events": [
+    {
+      "title": "me's event",
+      "date": "",
+      "location": "",
+      "userId": 4,
+      "id": 2
+    }
+  ]
 }

@@ -9,11 +9,14 @@ import './Event.css'
 export default class EventList extends Component {
 
     render() {
+        console.log(this.props)
         return (
             <div className="events">
                 <div>
                     <h3>Events</h3>
-                    <EventForm addEvent={this.props.addEvent}/>
+                    <EventForm {...this.props}
+                    addEvent={this.props.addEvent}
+                    activeUser={this.props.activeUser}/>
                 </div>
                 <section>
                     {
