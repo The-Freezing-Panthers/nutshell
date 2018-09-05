@@ -4,43 +4,49 @@ const getData = Object.create(null, {
     getUsers: {
         value: () => {
             return fetch(`${remoteURL}/users`)
-            .then(response => response.json())
+                .then(response => response.json())
         }
     },
     getUserEmails: {
         value: (loginEmail) => {
             return fetch(`${remoteURL}/users?email=${loginEmail}`)
-            .then(response => response.json())
+                .then(response => response.json())
         }
     },
     getTasks: {
         value: (userID) => {
             return fetch(`${remoteURL}/users/${userID}/tasks?_sort=date&_order=asc`)
-            .then(response => response.json())
+                .then(response => response.json())
         }
     },
     getTaskByID: {
         value: (taskID) => {
             return fetch(`${remoteURL}/tasks/${taskID}`)
-            .then(response => response.json())
+                .then(response => response.json())
         }
     },
     getMessages: {
         value: () => {
             return fetch(`${remoteURL}/messages`)
-            .then(response => response.json())
+                .then(response => response.json())
         }
     },
     getArticles: {
         value: (userID) => {
             return fetch(`${remoteURL}/users/${userID}/articles?_sort=id&_order=desc`)
-            .then(response => response.json())
+                .then(response => response.json())
         }
     },
     getEvents: {
         value: (userId) => {
             return fetch(`${remoteURL}/users/${userId}/events?_sort=date&_order=asc`)
-            .then(response => response.json())
+                .then(response => response.json())
+        }
+    },
+    checkUser: {
+        value: (email, username) => {
+            return fetch(`${remoteURL}/users?email=${email}&username=${username}`)
+                .then(response => response.json())
         }
     }
 })
@@ -76,11 +82,11 @@ const saveData = Object.create(null, {
     },
     saveArticle: {
         value: (article) => {
-        return fetch(`${remoteURL}/articles`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            return fetch(`${remoteURL}/articles`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify(article)
             })
                 .then(response => response.json())
@@ -88,11 +94,11 @@ const saveData = Object.create(null, {
     },
     saveMessages: {
         value: (article) => {
-        return fetch(`${remoteURL}/messages`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            return fetch(`${remoteURL}/messages`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify(article)
             })
                 .then(response => response.json())
@@ -100,11 +106,11 @@ const saveData = Object.create(null, {
     },
     saveEvent: {
         value: (event) => {
-        return fetch(`${remoteURL}/events`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            return fetch(`${remoteURL}/events`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify(event)
             })
                 .then(response => response.json())
