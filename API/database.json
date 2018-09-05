@@ -25,49 +25,30 @@
   "friends": [],
   "messages": [
     {
-      "message": "yooooo",
+      "content": "new",
+      "sender": "j",
       "id": 1
     },
     {
-      "message": "hello",
+      "content": "oh hai",
+      "sender": "me",
       "id": 2
-    },
-    {
-      "content": "",
-      "id": 3
-    },
-    {
-      "content": "new new new",
-      "id": 4
-    },
-    {
-      "content": "",
-      "id": 5
-    },
-    {
-      "content": "hi",
-      "id": 6
-    },
-    {
-      "content": "WOOHOO",
-      "id": 7
-    },
-    {
-      "content": "new message",
-      "id": 8
-    },
-    {
-      "content": "hello",
-      "id": 9
     }
   ],
   "articles": [],
   "events": [
     {
-      "title": "me's event",
+      "date": "2018-09-08",
+      "title": "event",
+      "location": "party town",
+      "id": 1,
+      "userId": 4
+    },
+    {
+      "title": "better party",
       "date": "",
-      "location": "",
-      "userId": 4,
+      "location": "cooler house",
+      "userId": 3,
       "id": 2
     }
   ]

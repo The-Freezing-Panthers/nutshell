@@ -25,7 +25,8 @@ export default class EventList extends Component {
                             key={event.id} 
                             event={event}
                             editEvent={this.props.editEvent}
-                            deleteEvent={this.props.deleteEvent} />
+                            deleteEvent={this.props.deleteEvent} 
+                            activeUser={this.props.activeUser}/>
                         )
                     }
                 </section>

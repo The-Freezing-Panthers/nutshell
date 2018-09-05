@@ -33,7 +33,8 @@ export default class EventCard extends Component {
             date: this.state.event.date,
             title: this.state.event.title,
             location: this.state.event.location,
-            id: this.state.event.id
+            id: this.state.event.id,
+            userId: this.props.activeUser
         }
 
         // Add new event to database and turn edit to false

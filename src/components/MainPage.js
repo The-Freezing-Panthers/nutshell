@@ -77,6 +77,7 @@ export default class MainPage extends Component {
                 <MessageList
                     messages={this.state.messages}
                     addMessage={this.addMessage}
+                    activeUsername={this.props.activeUsername}
                 />
                 <ArticleForm />
             </div>

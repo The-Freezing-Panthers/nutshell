@@ -5,7 +5,7 @@ import MessagesCard from './messagesCard'
 
 export default class MessagesList extends Component {
     state = {
-        content: ""
+        content: "",
     }
 
     handleFieldChange = evt => {
@@ -17,6 +17,7 @@ export default class MessagesList extends Component {
     constructNewMessage = () => {
         const message = {
             content: this.state.content,
+            sender: this.props.activeUsername
         }
         this.props.addMessage(message)
         .then(() => {
@@ -34,6 +35,7 @@ export default class MessagesList extends Component {
                             <MessagesCard
                                 key={message.id}
                                 message={message}
+                                activeUsername={this.props.activeUsername}
                             />
                         )
                     }

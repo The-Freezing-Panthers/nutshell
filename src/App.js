@@ -56,7 +56,7 @@ class App extends Component {
     }
     else if (this.state.currentView === "mainpage") {
       return (
-        <MainPage activeUser={this.state.activeUser} currentView={this.state.currentView} showView={this.showView} />
+        <MainPage activeUser={this.state.activeUser} activeUsername={this.state.activeUsername} currentView={this.state.currentView} showView={this.showView} />
       )
     }
     else if (this.state.currentView === "register") {
