@@ -1,13 +1,13 @@
 //Purpose: Determines the view (login page or dashboard) 
 import React, { Component } from 'react';
-import Login from "./login/Login";
 import EventList from './events/EventList';
 import DataManager from '../DataManager';
+import ArticleForm from './articles/ArticleForm';
 
 export default class MainPage extends Component {
     constructor(props) {
         super(props);
-        this.deleteEvent=this.deleteEvent.bind(this);
+        this.deleteEvent = this.deleteEvent.bind(this);
     }
 
     state = {
@@ -25,11 +25,18 @@ export default class MainPage extends Component {
         }))
 
     deleteEvent = event => DataManager.deleteData.deleteEvent(event)
-    .then(() => DataManager.getData.getEvents())
-    .then(events => this.setState({
-        events: events
-    }))
+        .then(() => DataManager.getData.getEvents())
+        .then(events => this.setState({
+            events: events
+        }))
 
+    editEvent = (eventID, editedEvent) => {
+        DataManager.editData.editEvent(eventID, editedEvent)
+        .then(() => DataManager.getData.getEvents())
+        .then(events => this.setState({
+            events: events
+        }))
+    }
 
     componentDidMount() {
         //const userID = JSON.parse(sessionStorage.getItem("credentials"))[0].id
@@ -48,15 +55,16 @@ export default class MainPage extends Component {
             .then(() => this.setState(newState))
     }
 
-
     render() {
         return (
             <div>
-                <Login />
+
                 <EventList
                     events={this.state.events}
-                    addEvent={this.addEvent} 
-                    deleteEvent={this.deleteEvent}/>
+                    addEvent={this.addEvent}
+                    deleteEvent={this.deleteEvent}
+                    editEvent={this.editEvent} />
+                <ArticleForm />
             </div>
         )
     }

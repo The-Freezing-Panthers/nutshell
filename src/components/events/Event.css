@@ -4,6 +4,8 @@
 }
 
 .eventCard {
-    border: 3px double dodgerblue;
-    margin: 1em
+    border: 5px solid rgb(187, 82, 63);
+    margin: 1em;
+    padding: 1em;
+    background-color: tomato
 }

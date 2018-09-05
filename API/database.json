@@ -4,6 +4,16 @@
       "id": 1,
       "username": "jeremiah",
       "email": "jeremiah@me.com"
+    },
+    {
+      "email": "george@me.com",
+      "username": "george",
+      "id": 2
+    },
+    {
+      "email": "j",
+      "username": "j",
+      "id": 3
     }
   ],
   "tasks": [],

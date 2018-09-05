@@ -21,6 +21,7 @@ export default class EventList extends Component {
                             <EventCard {...this.props}
                             key={event.id} 
                             event={event}
+                            editEvent={this.props.editEvent}
                             deleteEvent={this.props.deleteEvent} />
                         )
                     }
