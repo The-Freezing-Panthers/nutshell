@@ -2,15 +2,15 @@
 
 import React, { Component } from 'react'
 import EventCard from './EventCard'
-import DataManager from '../../DataManager'
 import EventForm from './EventForm'
+import './Event.css'
 
 
 export default class EventList extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className="events">
                 <div>
                     <h3>Events</h3>
                     <EventForm addEvent={this.props.addEvent}/>
@@ -25,7 +25,7 @@ export default class EventList extends Component {
                         )
                     }
                 </section>
-            </React.Fragment>
+            </div>
         )
     }
 }

@@ -5,6 +5,11 @@ import EventList from './events/EventList';
 import DataManager from '../DataManager';
 
 export default class MainPage extends Component {
+    constructor(props) {
+        super(props);
+        this.deleteEvent=this.deleteEvent.bind(this);
+    }
+
     state = {
         tasks: [],
         friends: [],
@@ -20,7 +25,10 @@ export default class MainPage extends Component {
         }))
 
     deleteEvent = event => DataManager.deleteData.deleteEvent(event)
-    .then(events => this.setState({events:events}))
+    .then(() => DataManager.getData.getEvents())
+    .then(events => this.setState({
+        events: events
+    }))
 
 
     componentDidMount() {

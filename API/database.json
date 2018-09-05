@@ -10,18 +10,5 @@
   "friends": [],
   "messages": [],
   "articles": [],
-  "events": [
-    {
-      "title": "another",
-      "date": "",
-      "location": "one",
-      "id": 2
-    },
-    {
-      "title": "one",
-      "date": "",
-      "location": "more",
-      "id": 3
-    }
-  ]
+  "events": []
 }
