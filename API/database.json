@@ -9,10 +9,37 @@
       "email": "george@me.com",
       "username": "george",
       "id": 2
+    },
+    {
+      "email": "jack@me.com",
+      "username": "jack",
+      "id": 3
     }
   ],
   "tasks": [],
-  "friends": [],
+  "friends": [
+    {
+      "otherFriendId": 2,
+      "friendUserId": 1,
+      "otherFriendName": "george",
+      "friendUsername": "jeremiah",
+      "id": 1
+    },
+    {
+      "otherFriendId": 2,
+      "friendUserId": 1,
+      "otherFriendName": "george",
+      "friendUsername": "jeremiah",
+      "id": 2
+    },
+    {
+      "otherFriendId": 2,
+      "friendUserId": 1,
+      "otherFriendName": "george",
+      "friendUsername": "jeremiah",
+      "id": 3
+    }
+  ],
   "messages": [],
   "articles": [],
   "events": []

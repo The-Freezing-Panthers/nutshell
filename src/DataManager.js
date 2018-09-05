@@ -1,6 +1,12 @@
 const remoteURL = "http://localhost:8088"
 
 const getData = Object.create(null, {
+    searchUsername: {
+        value: (friend) => {
+            return fetch(`http://localhost:8088/users?username=${friend}`)
+                .then(r => r.json())
+        }
+    },
     getUsers: {
         value: () => {
             return fetch(`${remoteURL}/users`)
@@ -52,6 +58,19 @@ const getData = Object.create(null, {
 })
 
 const saveData = Object.create(null, {
+    saveFriend: {
+        value: (friendship) => {
+            console.log("data", friendship)
+            return fetch(`${remoteURL}/friends`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(friendship)
+            })
+                .then(response => response.json())
+        }
+    },
     saveUser: {
         value: (email, username) => {
             return fetch(`${remoteURL}/users`, {
@@ -182,6 +201,13 @@ const editData = Object.create(null, {
 })
 
 const deleteData = Object.create(null, {
+    deleteFriend: {
+        value: (friendshipId) => {
+            return fetch(`${remoteURL}/friends/${friendshipId}`, {
+                method: "DELETE"
+            })
+        }
+    },
     deleteTask: {
         value: (taskID) => {
             return fetch(`${remoteURL}/tasks/${taskID}`, {

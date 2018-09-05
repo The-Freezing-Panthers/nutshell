@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import EventList from './events/EventList';
 import DataManager from '../DataManager';
 import ArticleForm from './articles/ArticleForm';
+import Friends from './friends/Friends';
 
 export default class MainPage extends Component {
     state = {
@@ -38,6 +39,7 @@ export default class MainPage extends Component {
                     events={this.state.events}
                     addEvent={this.addEvent} />
                     <ArticleForm />
+                    <Friends activeUser={this.props.activeUser}/>
             </div>
         )
     }
