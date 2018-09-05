@@ -1,12 +1,22 @@
 {
-    "users":[{
-        "id":1,
-        "username":"jeremiah",
-        "email":"jeremiah@me.com"
-    }],
-    "tasks":[],
-    "friends":[],
-    "messages":[],
-    "articles":[],
-    "events":[]
+  "users": [
+    {
+      "id": 1,
+      "username": "jeremiah",
+      "email": "jeremiah@me.com"
+    }
+  ],
+  "tasks": [],
+  "friends": [],
+  "messages": [],
+  "articles": [
+    {
+      "title": "Test",
+      "synopsis": "meee",
+      "url": "www.ben.com",
+      "date": "Tue Sep 04 2018",
+      "id": 1
+    }
+  ],
+  "events": []
 }

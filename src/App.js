@@ -4,6 +4,7 @@ import MainPage from './components/MainPage'
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 
+
 class App extends Component {
   state = {
     activeUser: "",
