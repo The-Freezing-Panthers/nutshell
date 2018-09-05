@@ -2,33 +2,35 @@
 
 import React, { Component } from 'react'
 import EventCard from './EventCard'
-import DataManager from '../../DataManager'
+import EventForm from './EventForm'
+import './Event.css'
+
 
 export default class EventList extends Component {
 
-    addEvent = event => {
-        DataManager.addEvent(event)
-        .then(() => DataManager.getAllEvents())
-        .then(events => this.setState({
-            events: events
-        }))
-    }
-
     render() {
+        console.log(this.props)
         return (
-            <React.Fragment>
+            <div className="events">
                 <div>
                     <h3>Events</h3>
-                    <button onClick={this.addEvent}>Add New Event</button>
+                    <EventForm {...this.props}
+                    addEvent={this.props.addEvent}
+                    activeUser={this.props.activeUser}/>
                 </div>
                 <section>
                     {
                         this.props.events.map(event =>
-                            <EventCard key={event.id} event={event} {...this.props} />
+                            <EventCard {...this.props}
+                            key={event.id} 
+                            event={event}
+                            editEvent={this.props.editEvent}
+                            deleteEvent={this.props.deleteEvent} 
+                            activeUser={this.props.activeUser}/>
                         )
                     }
                 </section>
-            </React.Fragment>
+            </div>
         )
     }
 }

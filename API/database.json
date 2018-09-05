@@ -11,36 +11,45 @@
       "id": 2
     },
     {
-      "email": "jack@me.com",
-      "username": "jack",
+      "email": "j",
+      "username": "j",
       "id": 3
+    },
+    {
+      "email": "me",
+      "username": "me",
+      "id": 4
     }
   ],
   "tasks": [],
-  "friends": [
+  "friends": [],
+  "messages": [
     {
-      "otherFriendId": 2,
-      "friendUserId": 1,
-      "otherFriendName": "george",
-      "friendUsername": "jeremiah",
+      "content": "new",
+      "sender": "j",
       "id": 1
     },
     {
-      "otherFriendId": 2,
-      "friendUserId": 1,
-      "otherFriendName": "george",
-      "friendUsername": "jeremiah",
+      "content": "oh hai",
+      "sender": "me",
       "id": 2
-    },
-    {
-      "otherFriendId": 2,
-      "friendUserId": 1,
-      "otherFriendName": "george",
-      "friendUsername": "jeremiah",
-      "id": 3
     }
   ],
-  "messages": [],
   "articles": [],
-  "events": []
+  "events": [
+    {
+      "date": "2018-09-08",
+      "title": "event",
+      "location": "party town",
+      "id": 1,
+      "userId": 4
+    },
+    {
+      "title": "better party",
+      "date": "",
+      "location": "cooler house",
+      "userId": 3,
+      "id": 2
+    }
+  ]
 }

@@ -1,0 +1,15 @@
+.navbar {
+    background-color: goldenrod;
+    height: 2em;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.navbar ul li {
+    list-style: none;
+}
