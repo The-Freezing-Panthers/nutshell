@@ -1,11 +1,15 @@
 import React, { Component } from "react"
 import DataManager from '../../DataManager'
-// import "./animal.css"
+// import "./form.css"
 
 export default class ArticleForm extends Component {
    // Set initial state
    state = {
-      articleName: ""
+      // articleName: ""
+      title: "",
+      synopsis: "",
+      url: "",
+      date: ""
    }
 
    // Update state whenever an input field is edited
@@ -24,7 +28,11 @@ export default class ArticleForm extends Component {
       evt.preventDefault()
       
       const article = {
-      name: this.state.articleName,
+      title: this.state.title,
+      synopsis: this.state.synopsis,
+      url: this.state.url,
+      date: this.state.date
+      
       // breed: this.state.breed,
       // employeeId: this.props.employees.find(e => e.name === this.state.employee).id
       }
@@ -34,25 +42,52 @@ export default class ArticleForm extends Component {
          DataManager.saveData.saveArticle(article);
    }
 
+   addNewDate = evt => {
+         const d = new Date();
+         let n = d.toDateString();
+         return n;
+   }
+
+   componentDidMount() {
+         this.setState({
+            date: this.addNewDate()
+         });
+   }
+
    render() {
       return (
          <React.Fragment>
+               <h3>Articles</h3>
             <form className="articleForm">
                <div className="form-group">
-                  <label htmlFor="articleName">Article name</label>
+                  <label htmlFor="title">Title</label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
-                     id="articleName"
-                     placeholder="Article name" />
+                     id="title"
+                     placeholder="Title" />
                </div>
-               {/* <div className="form-group">
-                  <label htmlFor="breed">Breed</label>
+               <div className="form-group">
+                  <label htmlFor="synopsis">Synopsis</label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
-                     id="breed" placeholder="Breed" />
-               </div> */}
+                     id="synopsis" placeholder="Synopsis" />
+               </div>
+               <div className="form-group">
+                  <label htmlFor="url">URL</label>
+                  <input type="text" required="true"
+                     className="form-control"
+                     onChange={this.handleFieldChange}
+                     id="url" placeholder="URL" />
+               </div>
+               <div className="form-group">
+                  <label htmlFor="date">Date</label>
+                  <input type="text" required="true"
+                     className="form-control"
+                     onChange={this.handleFieldChange}
+                     id="date" value={this.state.date} />
+               </div>
                {/* <div className="form-group">
                   <label htmlFor="employee">Assign to caretaker</label>
                   <select defaultValue="" name="employee" id="employee"
