@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import getData from "../../DataManager"
-import saveData from "../../DataManager"
+import DataManager from '../../DataManager'
 
 export default class Register extends Component {
     state = {
@@ -13,13 +12,15 @@ export default class Register extends Component {
         this.setState(values)
     }
     handleRegister = () => {
-        getData.checkUser(this.state.registerEmail, this.state.registerUsername)
+        let email = this.state.registerEmail
+        let username = this.state.registerUsername
+        DataManager.getData.checkUser(email, username)
             .then(response => {
                 if (response.length) {
                     alert("User already exists!")
                 }
                 else {
-                    saveData.saveUser(this.state.registerEmail, this.state.registerUsername)
+                    DataManager.saveData.saveUser(email, username)
                         .then(
                             alert("User Created Please Log In"),
                             this.props.showView("login")
