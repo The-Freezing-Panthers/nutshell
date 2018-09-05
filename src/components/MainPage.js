@@ -1,8 +1,8 @@
 //Purpose: Determines the view (login page or dashboard) 
 import React, { Component } from 'react';
-import Login from "./login/Login";
 import EventList from './events/EventList';
 import DataManager from '../DataManager';
+import ArticleForm from './articles/ArticleForm';
 
 export default class MainPage extends Component {
     state = {
@@ -30,14 +30,14 @@ export default class MainPage extends Component {
     //         .then(() => this.setState(newState))
     // }
 
-
     render() {
         return (
             <div>
-                <Login />
+              
                 <EventList
-                events={this.state.events}
-                addEvent={this.addEvent} />
+                    events={this.state.events}
+                    addEvent={this.addEvent} />
+                    <ArticleForm />
             </div>
         )
     }
