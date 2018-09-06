@@ -25,14 +25,34 @@
   "friends": [],
   "messages": [
     {
-      "content": "new",
       "sender": "j",
+      "content": "new!!",
       "id": 1
     },
     {
       "content": "oh hai",
       "sender": "me",
       "id": 2
+    },
+    {
+      "content": "Hello!",
+      "sender": "j",
+      "id": 3
+    },
+    {
+      "content": "yo!",
+      "sender": "j",
+      "id": 4
+    },
+    {
+      "content": "new",
+      "sender": "j",
+      "id": 5
+    },
+    {
+      "content": "plz work",
+      "sender": "j",
+      "id": 6
     }
   ],
   "articles": [],
