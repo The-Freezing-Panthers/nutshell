@@ -32,7 +32,8 @@ export default class MessageCard extends Component {
         const message = {
             sender: this.state.message.sender,
             content: this.state.message.content,
-            id: this.state.message.id
+            id: this.state.message.id,
+            sender: this.props.activeUsername
         }
 
         // Add new message to database and turn edit to false
@@ -53,7 +54,8 @@ export default class MessageCard extends Component {
                     </div>
                     :
                     <div>
-                        <p>{this.props.message.activeUsername}: {this.state.message.content}</p>
+                        <p>{this.props.message.sender}: {this.state.message.content}</p>
+                        <button onClick={() => this.props.deleteMessage(this.props.message.id)}>Delete message</button>
 
                     </div>
                 }

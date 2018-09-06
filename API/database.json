@@ -31,38 +31,7 @@
       "id": 1
     }
   ],
-  "messages": [
-    {
-      "sender": "j",
-      "content": "new!!",
-      "id": 1
-    },
-    {
-      "content": "oh hai",
-      "sender": "me",
-      "id": 2
-    },
-    {
-      "content": "Hello!",
-      "sender": "j",
-      "id": 3
-    },
-    {
-      "content": "yo!",
-      "sender": "j",
-      "id": 4
-    },
-    {
-      "content": "new",
-      "sender": "j",
-      "id": 5
-    },
-    {
-      "content": "plz work",
-      "sender": "j",
-      "id": 6
-    }
-  ],
+  "messages": [],
   "articles": [],
   "events": [
     {
@@ -73,9 +42,9 @@
       "userId": 4
     },
     {
-      "title": "better party",
-      "date": "",
-      "location": "cooler house",
+      "title": "new",
+      "date": "2018-09-26",
+      "location": "new",
       "userId": 3,
       "id": 2
     }

@@ -37,6 +37,7 @@ export default class MessagesList extends Component {
                                 key={message.id}
                                 message={message}
                                 editMessage={this.props.editMessage}
+                                deleteMessage={this.props.deleteMessage}
                                 activeUsername={this.props.activeUsername}
                             />
                         )

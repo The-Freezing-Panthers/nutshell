@@ -54,6 +54,13 @@ export default class MainPage extends Component {
             }))
     }
 
+    deleteMessage = messageID => DataManager.deleteData.deleteMessage(messageID)
+            .then(() => DataManager.getData.getMessages())
+            .then(messages => this.setState({
+                messages: messages
+            }))
+
+
 
     componentDidMount() {
         const newState = {}
@@ -87,10 +94,11 @@ export default class MainPage extends Component {
                     messages={this.state.messages}
                     addMessage={this.addMessage}
                     editMessage={this.editMessage}
+                    deleteMessage={this.deleteMessage}
                     activeUsername={this.props.activeUsername}
                 />
                 <ArticleForm />
-                <Friends activeUser={this.props.activeUser}/>
+                <Friends activeUser={this.props.activeUser} />
             </div>
         )
     }
