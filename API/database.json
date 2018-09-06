@@ -22,7 +22,15 @@
     }
   ],
   "tasks": [],
-  "friends": [],
+  "friends": [
+    {
+      "otherFriendId": 2,
+      "friendUserId": 1,
+      "otherFriendName": "george",
+      "friendUsername": "jeremiah",
+      "id": 1
+    }
+  ],
   "messages": [
     {
       "content": "new",

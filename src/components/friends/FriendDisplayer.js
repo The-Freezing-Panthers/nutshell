@@ -1,38 +1,47 @@
 import React, { Component } from 'react';
 import FriendCard from './FriendCard';
+import DataManager from '../../DataManager'
 
 export default class FriendDisplay extends Component {
-    state = {
-        friends: []
-    }
+
+
     displayFriends = () => {
         let userId = this.props.activeUser
         return fetch(`http://localhost:8088/friends?friendUserId=${userId}`)
             .then(r => r.json())
             .then(friends => {
                 this.setState({
-                    friends: friends.map(friend => {
-                       return <FriendCard 
-                            key={friend.id}
-                            friend={friend}
-                            markDelete={this.props.markDelete}
-                        />
-                    })
+                    friends: friends,
+
                 })
             })
 
     }
-    componentDidMount() {
-        this.displayFriends()
+
+
+
+    displayer = () => {
+        let friends = this.props.friends
+
+        {
+            if (this.props.dataLoaded) {
+                return <div><h2>Followed Friends</h2>
+                    {friends.map(friend =>
+                        <FriendCard key={friend.id} friend={friend} markDelete={this.props.markDelete} handleDelete={this.props.handleDelete} />
+                    )}</div>
+            }
+            else {
+                return <div>Loading</div>
+            }
+        }
     }
 
+
     render() {
- 
-        return (
-            <div>
-                <h2>Friends List</h2>
-                {this.friends}
-            </div>
+
+        return (<div>
+            {this.displayer()}
+        </div>
         )
     }
 }

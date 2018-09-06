@@ -3,11 +3,8 @@ import React, { Component } from 'react';
 import EventList from './events/EventList';
 import DataManager from '../DataManager';
 import ArticleForm from './articles/ArticleForm';
-<<<<<<< HEAD
 import Friends from './friends/Friends';
-=======
 import MessageList from './messages/messagesList'
->>>>>>> master
 
 export default class MainPage extends Component {
     constructor(props) {
@@ -60,7 +57,7 @@ export default class MainPage extends Component {
             //.then(() => DataManager.getData.getArticles())
             //.then(articles => newState.articles = articles)
             //.then(() => DataManager.getData.getFriends())
-            //.then(friends => newState.friends = friends)
+            // .then(friends => newState.friends = friends)
             .then(() => DataManager.getData.getMessages())
             .then(messages => newState.messages = messages)
             .then(() => this.setState(newState))
@@ -73,11 +70,6 @@ export default class MainPage extends Component {
 
                 <EventList
                     events={this.state.events}
-<<<<<<< HEAD
-                    addEvent={this.addEvent} />
-                    <ArticleForm />
-                    <Friends activeUser={this.props.activeUser}/>
-=======
                     addEvent={this.addEvent}
                     deleteEvent={this.deleteEvent}
                     editEvent={this.editEvent}
@@ -89,7 +81,7 @@ export default class MainPage extends Component {
                     activeUsername={this.props.activeUsername}
                 />
                 <ArticleForm />
->>>>>>> master
+                <Friends activeUser={this.props.activeUser}/>
             </div>
         )
     }
