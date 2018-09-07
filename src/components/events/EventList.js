@@ -11,15 +11,15 @@ export default class EventList extends Component {
     render() {
         console.log(this.props)
         return (
-            <div className="">
+            <div className="box">
                 <div className="">
-                    <h3>New Event</h3>
+                    <h4 className="is-size-4">Events</h4>
                     <EventForm {...this.props}
                     addEvent={this.props.addEvent}
                     activeUser={this.props.activeUser}/>
                 </div>
                 <section className="">
-                <h3>Your Events</h3>
+                <h5 className="is-size-5">Your Events</h5>
                     {
                         this.props.events.map(event =>
                             <EventCard {...this.props}

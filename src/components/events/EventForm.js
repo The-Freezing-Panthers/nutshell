@@ -39,6 +39,7 @@ export default class EventForm extends Component {
     render() {
         return (
             <div className="box">
+                    <h5 className="is-size-5">New Event</h5>
                     <label for="new-event-date">Date:</label>
                     <input  type="date" id="newDate" onChange={this.handleFieldChange}/><br />
                     <label for="new-event-title">Event Name:</label>

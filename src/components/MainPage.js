@@ -95,7 +95,7 @@ export default class MainPage extends Component {
         return (
             <div>
                 <div className="columns">
-                    <div className="column is-5 is-offset-1 box">
+                    <div className="column is-5 is-offset-1">
                         <EventList
                             className=""
                             events={this.state.events}

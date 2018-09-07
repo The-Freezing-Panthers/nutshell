@@ -28,8 +28,8 @@ export default class MessagesList extends Component {
     
     render() {
         return (
-            <div className="messages">
-                <h3>Messages</h3>
+            <div className="messages box">
+                <h4 className="is-size-4">Messages</h4>
                 <section>
                     {
                         this.props.messages.map(message =>
@@ -45,8 +45,8 @@ export default class MessagesList extends Component {
                 </section>
                     <hr />
                     <label for="content">New Message: </label>
-                    <input type="text" id="content" onChange={this.handleFieldChange}/>
-                    <button className="button is-small is-primary is-outlined is-inverted" onClick={this.constructNewMessage}>Send Message</button>
+                    <input type="text" id="content" onChange={this.handleFieldChange}/><br />
+                    <button className="button is-small is-primary is-outlined" onClick={this.constructNewMessage}>Send Message</button>
             </div>
         )
     }

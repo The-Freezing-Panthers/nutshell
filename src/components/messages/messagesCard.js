@@ -43,7 +43,7 @@ export default class MessageCard extends Component {
 
     render() {
         return (
-            <div>
+            <div className="box">
                 {(this.state.edit) ?
                     <div>
                         <input type="text" required="true"
@@ -55,7 +55,7 @@ export default class MessageCard extends Component {
                     :
                     <div>
                         <p>{this.props.message.sender}: {this.state.message.content}</p>
-                        <button onClick={() => this.props.deleteMessage(this.props.message.id)}>Delete message</button>
+                        <button className="button is-small is-danger is-outlined" onClick={() => this.props.deleteMessage(this.props.message.id)}>Delete message</button>
 
                     </div>
                 }
@@ -64,7 +64,7 @@ export default class MessageCard extends Component {
                     <button onClick={this.constructNewMessage}
                         className="button">Save Message</button>
                     : <button onClick={() => this.handleEditClicked()}
-                        className="button">Edit Message</button>
+                        className="button is-small is-warning is-inverted is-outlined">Edit Message</button>
                 }
             </div>
         )

@@ -45,7 +45,7 @@ export default class EventCard extends Component {
 
     render() {
         return (
-            <div key={this.props.event.id} id={this.props.event.id} className="eventCard">
+            <div key={this.props.event.id} id={this.props.event.id} className="box">
 
                 {(this.state.edit) ?
                     <div>

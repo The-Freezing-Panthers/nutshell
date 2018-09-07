@@ -36,9 +36,7 @@
       "id": 1
     }
   ],
-  
   "messages": [],
-  
   "articles": [],
   "events": [
     {
@@ -49,14 +47,14 @@
       "userId": 4
     },
     {
-      "title": "event",
+      "title": "",
       "date": "",
       "location": "",
       "userId": 3,
       "id": 2
     },
     {
-      "title": "new",
+      "title": "",
       "date": "",
       "location": "",
       "userId": 3,
