@@ -37,7 +37,7 @@ displayer = () => {
     let accepted = this.props.acceptedFriend
     
         if (this.props.dataLoaded) {
-            return <div><h2>Friends List</h2>
+            return <div><h4 className="is-size-4">Friends List</h4>
                 {this.addedFriends(friends)}
                 {this.acceptedFriends(accepted)}
                 </div>

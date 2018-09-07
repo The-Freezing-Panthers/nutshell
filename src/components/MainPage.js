@@ -116,18 +116,22 @@ export default class MainPage extends Component {
                     </div>
                 </div>
                 {/* does there need to be a condition to check if articles is empty? */}
-                <ArticleList
-                    articles={this.state.articles}
-                    deleteArticle={this.deleteArticle}
-                />
-                <ArticleForm
-                    articles={this.state.articles}
-                    addArticle={this.addArticle}
-                // constructNewArticle={this.constructNewArticle}
-                />
-
-                <Friends activeUser={this.props.activeUser} />
-
+                <div className="columns">
+                    <div className="column is-5 is-offset-1 box has-background-grey-lighter	">
+                        <ArticleList
+                            articles={this.state.articles}
+                            deleteArticle={this.deleteArticle}
+                        />
+                        <ArticleForm
+                            articles={this.state.articles}
+                            addArticle={this.addArticle}
+                        // constructNewArticle={this.constructNewArticle}
+                        />
+                    </div>
+                    <div className="column is-5 box has-background-grey-lighter">
+                        <Friends activeUser={this.props.activeUser} />
+                    </div>
+                </div>
             </div>
         )
     }

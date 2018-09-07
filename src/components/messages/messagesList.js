@@ -21,14 +21,14 @@ export default class MessagesList extends Component {
             sender: this.props.activeUsername
         }
         this.props.addMessage(message)
-        .then(() => {
-            document.querySelector("#content").value = ""
-        })
+            .then(() => {
+                document.querySelector("#content").value = ""
+            })
     }
-    
+
     render() {
         return (
-            <div className="messages box">
+            <div className="messages box has-background-grey-lighter">
                 <h4 className="is-size-4">Messages</h4>
                 <section>
                     {
@@ -44,9 +44,11 @@ export default class MessagesList extends Component {
                     }
                 </section>
                     <hr />
+                <div className="has-background-grey	message-form">
                     <label for="content">New Message: </label>
-                    <input type="text" id="content" onChange={this.handleFieldChange}/><br />
-                    <button className="button is-small is-primary is-outlined" onClick={this.constructNewMessage}>Send Message</button>
+                    <input type="text" id="content" onChange={this.handleFieldChange} /><br />
+                    <button className="button is-small is-primary" onClick={this.constructNewMessage}>Send Message</button>
+                </div>
             </div>
         )
     }

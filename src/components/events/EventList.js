@@ -11,7 +11,7 @@ export default class EventList extends Component {
     render() {
         console.log(this.props)
         return (
-            <div className="box">
+            <div className="box has-background-grey-lighter	">
                 <div className="">
                     <h4 className="is-size-4">Events</h4>
                     <EventForm {...this.props}

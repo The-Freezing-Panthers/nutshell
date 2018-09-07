@@ -49,9 +49,9 @@ export default class ArticleForm extends Component {
    render() {
       return (
          <React.Fragment>
-            <form className="articleForm">
+            <form className="articleForm box has-background-grey has-text-white">
                <div className="form-group">
-                  <label htmlFor="title">Title</label>
+                  <label htmlFor="title">Title: </label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
@@ -59,27 +59,27 @@ export default class ArticleForm extends Component {
                      placeholder="Title" />
                </div>
                <div className="form-group">
-                  <label htmlFor="synopsis">Synopsis</label>
+                  <label htmlFor="synopsis">Synopsis: </label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
                      id="synopsis" placeholder="Synopsis" />
                </div>
                <div className="form-group">
-                  <label htmlFor="url">URL</label>
+                  <label htmlFor="url">URL: </label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
                      id="url" placeholder="URL" />
                </div>
                <div className="form-group">
-                  <label htmlFor="date">Date</label>
+                  <label htmlFor="date">Date: </label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
                      id="date" value={this.state.date} />
                </div>
-               <button type="submit" onClick={this.constructNewArticle} className="btn btn-primary">Submit</button>
+               <button className="button is-small is-primary" type="submit" onClick={this.constructNewArticle}>Submit</button>
             </form>
          </React.Fragment>
       )
