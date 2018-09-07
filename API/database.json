@@ -26,18 +26,7 @@
       "id": 5
     }
   ],
-  "tasks": [
-    {
-      "taskName": "",
-      "date": "Fri Sep 07 2018",
-      "id": 1
-    },
-    {
-      "taskName": "stuff",
-      "date": "Fri Sep 07 2018",
-      "id": 2
-    }
-  ],
+  "tasks": [],
   "friends": [
     {
       "otherFriendId": 2,
@@ -72,18 +61,7 @@
       "id": 4
     }
   ],
-  "messages": [
-    {
-      "content": "",
-      "sender": "j",
-      "id": 1
-    },
-    {
-      "content": "",
-      "sender": "j",
-      "id": 2
-    }
-  ],
+  "messages": [],
   "articles": [],
   "events": [
     {
@@ -92,13 +70,6 @@
       "location": "party town",
       "id": 1,
       "userId": 4
-    },
-    {
-      "title": "",
-      "date": "",
-      "location": "",
-      "userId": 3,
-      "id": 2
     }
   ]
 }

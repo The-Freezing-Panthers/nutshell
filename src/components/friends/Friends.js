@@ -142,7 +142,7 @@ export default class Friends extends Component {
             return <div>
                 <label>Search for Username</label>
                 <input id="searchQuery" onChange={this.handleFields}></input>
-                <button onClick={this.findButton}>Find</button>
+                <button className="button is-small is-primary" onClick={this.findButton}>Find</button>
                 {this.addFriendButton()}
             </div>
         }
@@ -174,7 +174,7 @@ export default class Friends extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.searching}>Search for Friends</button>
+                <button className="button is-small is-primary is-fullwidth" onClick={this.searching}>Search for Friends</button>
                 {this.friendFinder()}
                 <FriendDisplay acceptedFriend={this.state.acceptedFriend} changeMutual={this.changeMutual} displayFriends={this.displayFriends} handleDelete={this.handleDelete} activeUser={this.props.activeUser} dataLoaded={this.state.dataLoaded} friends={this.state.friends} markDelete={this.markDelete} />
                 <MutualFriend displayFriends={this.displayFriends} />

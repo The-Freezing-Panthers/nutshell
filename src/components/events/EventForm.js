@@ -40,14 +40,14 @@ export default class EventForm extends Component {
         return (
             <React.Fragment>
                 <div className="box has-background-grey has-text-white">
-                <h5 className="is-size5">Add New Event</h5>
-                <hr />
+                    <h5 className="is-size5">Add New Event</h5>
+                    <hr />
                     <label htmlFor="new-event-date">Date:</label>
-                    <input  type="date" id="newDate" onChange={this.handleFieldChange}/><br />
+                    <input type="date" id="newDate" onChange={this.handleFieldChange} /><br />
                     <label htmlFor="new-event-title">Event Name:</label>
-                    <input  type="text" id="newTitle"onChange={this.handleFieldChange}/><br />
+                    <input type="text" id="newTitle" onChange={this.handleFieldChange} /><br />
                     <label htmlFor="new-event-location">Event Location:</label>
-                    <input type="text" id="newLocation"onChange={this.handleFieldChange}/><br />
+                    <input type="text" id="newLocation" onChange={this.handleFieldChange} /><br />
                     <button className="button is-small is-primary" onClick={this.constructNewEvent}>Add New Event</button>
                 </div>
             </React.Fragment>
