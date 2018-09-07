@@ -44,10 +44,12 @@ export default class MessagesList extends Component {
                         )
                     }
                 </section>
+                <div className="box has-background-grey has-text-white">
                     <hr />
                     <label htmlFor="content">New Message: </label>
-                    <input type="text" id="content" onChange={this.handleFieldChange}/>
+                    <input type="text" id="content" onChange={this.handleFieldChange} /><br />
                     <button className="button is-small is-primary" onClick={this.constructNewMessage}>Send Message</button>
+                </div>
             </div>
         )
     }

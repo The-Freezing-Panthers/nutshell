@@ -6,7 +6,7 @@ export default class AcceptedFriendCard extends Component {
             return <div>
                 <article key={this.props.accept.id} id={this.props.accept.id}>
                     <p>{this.props.accept.friendUsername}</p>
-                    <button onClick={this.props.changeMutual} >Remove</button>
+                    <button className="button is-small is-danger is-outlined" onClick={this.props.changeMutual} >Remove</button>
                 </article>
             </div>
         }

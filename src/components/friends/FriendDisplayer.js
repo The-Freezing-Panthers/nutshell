@@ -37,6 +37,7 @@ displayer = () => {
     
         if (this.props.dataLoaded) {
             return <div><h4 className="is-size-4">Friends List</h4>
+            <hr />
                 {this.addedFriends(friends)}
                 {this.acceptedFriends(accepted)}
                 </div>
