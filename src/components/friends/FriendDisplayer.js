@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FriendCard from './FriendCard';
-import DataManager from '../../DataManager'
 
 export default class FriendDisplay extends Component {
 
@@ -22,8 +21,7 @@ export default class FriendDisplay extends Component {
 
     displayer = () => {
         let friends = this.props.friends
-
-        {
+        
             if (this.props.dataLoaded) {
                 return <div><h2>Followed Friends</h2>
                     {friends.map(friend =>
@@ -33,7 +31,7 @@ export default class FriendDisplay extends Component {
             else {
                 return <div>Loading</div>
             }
-        }
+        
     }
 
 

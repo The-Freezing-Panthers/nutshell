@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import DataManager from '../../DataManager'
+// import DataManager from '../../DataManager'
 // import "./animal.css"
 
 export default class EventForm extends Component {
@@ -40,11 +40,11 @@ export default class EventForm extends Component {
         return (
             <React.Fragment>
                 <fieldset>
-                    <label for="new-event-date">Date:</label>
+                    <label htmlFor="new-event-date">Date:</label>
                     <input  type="date" id="newDate" onChange={this.handleFieldChange}/><br />
-                    <label for="new-event-title">Event Name:</label>
+                    <label htmlFor="new-event-title">Event Name:</label>
                     <input  type="text" id="newTitle"onChange={this.handleFieldChange}/><br />
-                    <label for="new-event-location">Event Location:</label>
+                    <label htmlFor="new-event-location">Event Location:</label>
                     <input type="text" id="newLocation"onChange={this.handleFieldChange}/><br />
                     <button onClick={this.constructNewEvent}>Add New Event</button>
                 </fieldset>

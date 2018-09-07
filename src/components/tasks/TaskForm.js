@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import DataManager from '../../DataManager'
+// import DataManager from '../../DataManager'
 
 export default class TaskForm extends Component {
    // Set initial state
@@ -61,6 +61,7 @@ export default class TaskForm extends Component {
                      onChange={this.handleFieldChange}
                      id="date" value={this.state.date} />
                </div>
+
                <button type="submit" onClick={this.constructNewTask} className="btn btn-primary">Submit</button>
             </form>
          </React.Fragment>

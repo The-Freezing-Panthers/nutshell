@@ -1,5 +1,5 @@
 //Purpose: HTML representation of each individual event
-import DataManager from '../../DataManager'
+// import DataManager from '../../DataManager'
 
 import React, { Component } from 'react'
 
