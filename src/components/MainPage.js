@@ -93,8 +93,8 @@ export default class MainPage extends Component {
 
         DataManager.getData.getEvents(this.props.activeUser)
             .then(events => newState.events = events)
-            //.then(() => DataManager.getData.getTasks())
-            //.then(tasks => newState.tasks = tasks)
+            .then(() => DataManager.getData.getTasks())
+            .then(tasks => newState.tasks = tasks)
             .then(() => DataManager.getData.getArticles())
             .then(articles => newState.articles = articles)
             //.then(() => DataManager.getData.getFriends())
