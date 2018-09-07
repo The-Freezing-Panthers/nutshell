@@ -26,7 +26,13 @@
       "id": 5
     }
   ],
-  "tasks": [],
+  "tasks": [
+    {
+      "taskName": "take garbage",
+      "date": "Fri Sep 07 2018",
+      "id": 1
+    }
+  ],
   "friends": [
     {
       "otherFriendId": 2,
@@ -61,9 +67,7 @@
       "id": 4
     }
   ],
-  
   "messages": [],
-  
   "articles": [],
   "events": [
     {

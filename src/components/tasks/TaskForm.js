@@ -1,14 +1,11 @@
 import React, { Component } from "react"
 // import DataManager from '../../DataManager'
-// import "./form.css"
 
-export default class ArticleForm extends Component {
+export default class TaskForm extends Component {
    // Set initial state
    state = {
-      // articleName: ""
-      title: "",
-      synopsis: "",
-      url: "",
+       // put task info here
+      taskName: "",
       date: ""
    }
 
@@ -20,18 +17,16 @@ export default class ArticleForm extends Component {
       this.setState(stateToChange)
    }
 
-   constructNewArticle = evt => {
+   constructNewTask = evt => {
       // stop page refresh
       evt.preventDefault()
       
-      const article = {
-      title: this.state.title,
-      synopsis: this.state.synopsis,
-      url: this.state.url,
-      date: this.state.date
+      const task = {
+        taskName: this.state.taskName,
+        date: this.state.date
       }
 
-      this.props.addArticle(article)
+      this.props.addTask(task)
    }
 
    addNewDate = evt => {
@@ -49,29 +44,16 @@ export default class ArticleForm extends Component {
    render() {
       return (
          <React.Fragment>
-            <form className="articleForm">
+            <form className="taskForm">
                <div className="form-group">
-                  <label htmlFor="title">Title</label>
+                  <label htmlFor="taskName">Task name</label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
-                     id="title"
-                     placeholder="Title" />
+                     id="taskName"
+                     placeholder="enter task" />
                </div>
-               <div className="form-group">
-                  <label htmlFor="synopsis">Synopsis</label>
-                  <input type="text" required="true"
-                     className="form-control"
-                     onChange={this.handleFieldChange}
-                     id="synopsis" placeholder="Synopsis" />
-               </div>
-               <div className="form-group">
-                  <label htmlFor="url">URL</label>
-                  <input type="text" required="true"
-                     className="form-control"
-                     onChange={this.handleFieldChange}
-                     id="url" placeholder="URL" />
-               </div>
+
                <div className="form-group">
                   <label htmlFor="date">Date</label>
                   <input type="text" required="true"
@@ -79,7 +61,8 @@ export default class ArticleForm extends Component {
                      onChange={this.handleFieldChange}
                      id="date" value={this.state.date} />
                </div>
-               <button type="submit" onClick={this.constructNewArticle} className="btn btn-primary">Submit</button>
+
+               <button type="submit" onClick={this.constructNewTask} className="btn btn-primary">Submit</button>
             </form>
          </React.Fragment>
       )

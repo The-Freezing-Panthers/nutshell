@@ -6,6 +6,8 @@ import ArticleForm from './articles/ArticleForm';
 import ArticleList from './articles/ArticleList';
 import Friends from './friends/Friends';
 import MessageList from './messages/messagesList'
+import TaskList from './tasks/TaskList';
+import TaskForm from './tasks/TaskForm';
 
 export default class MainPage extends Component {
     constructor(props) {
@@ -60,6 +62,18 @@ export default class MainPage extends Component {
             articles: articles
         }))
 
+        deleteTask = task => DataManager.deleteData.deleteTask(task)
+        .then(() => DataManager.getData.getTasks())
+        .then(task => this.setState({
+            tasks: task
+        }))
+
+        addTask = task => DataManager.saveData.saveTask(task)
+        .then(() => DataManager.getData.getTasks())
+        .then(tasks => this.setState({
+            tasks: tasks
+        }))
+
     editMessage = (messageID, editedMessage) => {
         DataManager.editData.editMessage(messageID, editedMessage)
             .then(() => DataManager.getData.getMessages())
@@ -88,7 +102,7 @@ export default class MainPage extends Component {
             .then(() => DataManager.getData.getMessages())
             .then(messages => newState.messages = messages)
             .then(() => this.setState(newState))
-            .then(() => console.log(this.state))
+            // .then(() => console.log(this.state))
     }
 
     render() {
@@ -110,7 +124,6 @@ export default class MainPage extends Component {
                     activeUsername={this.props.activeUsername}
                 />
 
-                {/* does there need to be a condition to check if articles is empty? */}
                 <ArticleList 
                     articles={this.state.articles}
                     deleteArticle={this.deleteArticle}
@@ -119,6 +132,16 @@ export default class MainPage extends Component {
                     articles={this.state.articles}
                     addArticle={this.addArticle}
                     // constructNewArticle={this.constructNewArticle}
+                />
+
+                <TaskList 
+                    tasks={this.state.tasks}
+                    deleteTask={this.deleteTask}
+                />
+
+                <TaskForm 
+                    tasks={this.setState.tasks}
+                    addTask={this.addTask}
                 />
 
                 <Friends activeUser={this.props.activeUser} />

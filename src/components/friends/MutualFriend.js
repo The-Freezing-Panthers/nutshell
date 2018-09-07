@@ -33,8 +33,8 @@ export default class MutualFriend extends Component {
         })
             .then(r => r.json())
             .then(() => {
-                this.pendingFrienshipFinder(),
-                    this.props.displayFriends()
+                this.pendingFrienshipFinder()
+                this.props.displayFriends()
             })
     }
 
@@ -44,7 +44,6 @@ export default class MutualFriend extends Component {
 
     pendingDisplayer = () => {
         let pendingFriends = this.state.pendingFriends
-        {
             if (this.state.dataLoaded && this.state.pendingFriends.length) {
                 return <div><h3>Pending Friend Requests</h3>
                     {pendingFriends.map(pendingFriend =>
@@ -54,7 +53,6 @@ export default class MutualFriend extends Component {
             else {
                 return <div></div>
             }
-        }
     }
     componentDidMount() {
         this.pendingFrienshipFinder()

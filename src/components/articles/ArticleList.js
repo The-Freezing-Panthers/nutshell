@@ -19,7 +19,8 @@ export default class ArticleList extends Component {
                             />
 
                         ))
-                    }     
+                    }    
+                    <br /> 
                 </section>
             </div>
         );
