@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import DataManager from '../../DataManager'
 // import "./animal.css"
 
 export default class EventForm extends Component {

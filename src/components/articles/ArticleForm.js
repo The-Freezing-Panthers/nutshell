@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import DataManager from '../../DataManager'
+
 // import "./form.css"
 
 export default class ArticleForm extends Component {

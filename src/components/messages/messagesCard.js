@@ -33,7 +33,6 @@ export default class MessageCard extends Component {
             sender: this.state.message.sender,
             content: this.state.message.content,
             id: this.state.message.id,
-            sender: this.props.activeUsername
         }
 
         // Add new message to database and turn edit to false
