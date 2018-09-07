@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import MessagesCard from './messagesCard'
+import './Messages.css'
 
 export default class MessagesList extends Component {
     state = {
@@ -27,7 +28,7 @@ export default class MessagesList extends Component {
     
     render() {
         return (
-            <div>
+            <div className="messages">
                 <h3>Messages</h3>
                 <section>
                     {
@@ -35,16 +36,17 @@ export default class MessagesList extends Component {
                             <MessagesCard
                                 key={message.id}
                                 message={message}
+                                editMessage={this.props.editMessage}
+                                deleteMessage={this.props.deleteMessage}
                                 activeUsername={this.props.activeUsername}
                             />
                         )
                     }
                 </section>
-                <fieldset>
+                    <hr />
                     <label for="content">New Message: </label>
                     <input type="text" id="content" onChange={this.handleFieldChange}/>
                     <button onClick={this.constructNewMessage}>Send Message</button>
-                </fieldset>
             </div>
         )
     }

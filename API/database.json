@@ -31,18 +31,7 @@
       "id": 1
     }
   ],
-  "messages": [
-    {
-      "content": "new",
-      "sender": "j",
-      "id": 1
-    },
-    {
-      "content": "oh hai",
-      "sender": "me",
-      "id": 2
-    }
-  ],
+  "messages": [],
   "articles": [],
   "events": [
     {
@@ -53,9 +42,9 @@
       "userId": 4
     },
     {
-      "title": "better party",
-      "date": "",
-      "location": "cooler house",
+      "title": "new",
+      "date": "2018-09-26",
+      "location": "new",
       "userId": 3,
       "id": 2
     }
