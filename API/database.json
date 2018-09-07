@@ -28,9 +28,9 @@
   ],
   "tasks": [
     {
-      "taskName": "take garbage",
+      "taskName": "take out the garbage",
       "date": "Fri Sep 07 2018",
-      "id": 1
+      "id": 3
     }
   ],
   "friends": [
@@ -47,7 +47,7 @@
       "friendUserId": 2,
       "otherFriendName": "jack",
       "friendUsername": "george",
-      "mutual": true,
+      "mutual": false,
       "id": 2
     },
     {
@@ -68,7 +68,15 @@
     }
   ],
   "messages": [],
-  "articles": [],
+  "articles": [
+    {
+      "title": "read a book",
+      "synopsis": "how toread a book i cant readmayne",
+      "url": "readdd",
+      "date": "Fri Sep 07 2018",
+      "id": 1
+    }
+  ],
   "events": [
     {
       "date": "2018-09-08",
