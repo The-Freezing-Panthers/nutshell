@@ -54,13 +54,29 @@ export default class MainPage extends Component {
             articles: article
         }))
 
-        addArticle = article => DataManager.saveData.saveArticle(article)
-        .then(() => DataManager.getData.getArticles())
-        .then(articles => this.setState({
-            articles: articles
-        }))
+    addArticle = article => DataManager.saveData.saveArticle(article)
+    .then(() => DataManager.getData.getArticles())
+    .then(articles => this.setState({
+        articles: articles
+    }))
 
     
+    editMessage = (messageID, editedMessage) => {
+        DataManager.editData.editMessage(messageID, editedMessage)
+            .then(() => DataManager.getData.getMessages())
+            .then(messages => this.setState({
+                messages: messages
+            }))
+    }
+
+    deleteMessage = messageID => DataManager.deleteData.deleteMessage(messageID)
+            .then(() => DataManager.getData.getMessages())
+            .then(messages => this.setState({
+                messages: messages
+            }))
+
+
+
     componentDidMount() {
         const newState = {}
 
@@ -75,7 +91,7 @@ export default class MainPage extends Component {
             .then(() => DataManager.getData.getMessages())
             .then(messages => newState.messages = messages)
             .then(() => this.setState(newState))
-            .then(()=> console.log(this.state))
+            .then(() => console.log(this.state))
     }
 
     render() {
@@ -92,6 +108,8 @@ export default class MainPage extends Component {
                 <MessageList
                     messages={this.state.messages}
                     addMessage={this.addMessage}
+                    editMessage={this.editMessage}
+                    deleteMessage={this.deleteMessage}
                     activeUsername={this.props.activeUsername}
                 />
 
