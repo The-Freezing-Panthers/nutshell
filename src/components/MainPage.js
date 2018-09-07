@@ -55,8 +55,8 @@ export default class MainPage extends Component {
             .then(events => newState.events = events)
             //.then(() => DataManager.getData.getTasks())
             //.then(tasks => newState.tasks = tasks)
-            //.then(() => DataManager.getData.getArticles())
-            //.then(articles => newState.articles = articles)
+            .then(() => DataManager.getData.getArticles())
+            .then(articles => newState.articles = articles)
             //.then(() => DataManager.getData.getFriends())
             // .then(friends => newState.friends = friends)
             .then(() => DataManager.getData.getMessages())
@@ -83,7 +83,9 @@ export default class MainPage extends Component {
                 />
 
                 {/* does there need to be a condition to check if articles is empty? */}
-                <ArticleList />
+                <ArticleList 
+                    articles={this.state.articles}
+                />
                 <ArticleForm />
 
                 <Friends activeUser={this.props.activeUser}/>

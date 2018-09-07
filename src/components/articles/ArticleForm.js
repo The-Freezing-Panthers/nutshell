@@ -57,7 +57,6 @@ export default class ArticleForm extends Component {
    render() {
       return (
          <React.Fragment>
-               <h3>Articles</h3>
             <form className="articleForm">
                <div className="form-group">
                   <label htmlFor="title">Title</label>
