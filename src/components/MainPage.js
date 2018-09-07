@@ -86,7 +86,8 @@ export default class MainPage extends Component {
                 <ArticleList 
                     articles={this.state.articles}
                 />
-                <ArticleForm />
+                <ArticleForm 
+                />
 
                 <Friends activeUser={this.props.activeUser}/>
             </div>
