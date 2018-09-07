@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 
 export default class AcceptedFriendCard extends Component {
     acceptFriend = () => {
-        if(this.props.friend.mutual) {
+        if(this.props.accept.mutual) {
             return <div>
-                <article key={this.props.friend.id} id={this.props.friend.id} className="friendCard">
-                    <p>{this.props.friend.otherFriendName}</p>
-                    <button onClick={this.props.handleDelete} >Delete</button>
-                </article>
-                <article key={this.props.friend.id} id={this.props.friend.id}>
-                    <p>{this.props.friend.friendUsername}</p>
-                    <button onClick={this.props.changeMutual} >Delete</button>
+                <article key={this.props.accept.id} id={this.props.accept.id}>
+                    <p>{this.props.accept.friendUsername}</p>
+                    <button onClick={this.props.changeMutual} >Remove</button>
                 </article>
             </div>
         }
@@ -18,7 +14,9 @@ export default class AcceptedFriendCard extends Component {
 
     render() {
         return (
-            <div></div>
+            <div>
+                {this.acceptFriend()}
+            </div>
         )
     }
 }

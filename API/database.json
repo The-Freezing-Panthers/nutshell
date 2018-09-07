@@ -24,6 +24,11 @@
       "email": "jack@me.com",
       "username": "jack",
       "id": 5
+    },
+    {
+      "email": "jose@me.com",
+      "username": "jose",
+      "id": 6
     }
   ],
   "tasks": [],
@@ -43,6 +48,22 @@
       "friendUsername": "george",
       "mutual": true,
       "id": 2
+    },
+    {
+      "otherFriendId": 2,
+      "friendUserId": 6,
+      "otherFriendName": "george",
+      "friendUsername": "jose",
+      "mutual": true,
+      "id": 3
+    },
+    {
+      "otherFriendId": 3,
+      "friendUserId": 2,
+      "otherFriendName": "j",
+      "friendUsername": "george",
+      "mutual": false,
+      "id": 4
     }
   ],
   "messages": [
@@ -55,6 +76,11 @@
       "content": "oh hai",
       "sender": "me",
       "id": 2
+    },
+    {
+      "content": "YO!",
+      "sender": "jack",
+      "id": 3
     }
   ],
   "articles": [],

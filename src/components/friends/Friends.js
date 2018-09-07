@@ -42,6 +42,23 @@ export default class Friends extends Component {
 
             })
     }
+    changeMutual = (e) => {
+        let friendListId = e.target.parentNode.id
+        let mutual = {
+            mutual: false
+        }
+        fetch(`http://localhost:8088/friends/${friendListId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(mutual)
+        })
+        .then(()=>{
+            this.displayFriends()
+        })
+    }
+
     searching = () => {
         if (this.state.searching) {
             this.setState({
@@ -69,7 +86,7 @@ export default class Friends extends Component {
                     friendUsername: currentUser.username,
                     mutual: false
                 }
-                fetch(`http://localhost:8088/friends?frienduserId=${currentUser.userId}&otherFriendId=${friendId.id}`)
+                fetch(`http://localhost:8088/friends?friendUserId=${currentUser.userId}&otherFriendId=${friendId.id}`)
                     .then(r => r.json())
                     .then(result => {
                         if (result.length) {
@@ -159,8 +176,8 @@ export default class Friends extends Component {
             <div>
                 <button onClick={this.searching}>Search for Friends</button>
                 {this.friendFinder()}
-                <FriendDisplay acceptedFriend={this.state.acceptedFriend} handleDelete={this.handleDelete} activeUser={this.props.activeUser} dataLoaded={this.state.dataLoaded} friends={this.state.friends} markDelete={this.markDelete} />
-                <MutualFriend />
+                <FriendDisplay acceptedFriend={this.state.acceptedFriend} changeMutual={this.changeMutual} displayFriends={this.displayFriends} handleDelete={this.handleDelete} activeUser={this.props.activeUser} dataLoaded={this.state.dataLoaded} friends={this.state.friends} markDelete={this.markDelete} />
+                <MutualFriend displayFriends={this.displayFriends} />
             </div>
         )
     }
