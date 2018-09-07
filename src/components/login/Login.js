@@ -41,13 +41,13 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div>
-                <label>Email</label>
-                <input onChange={this.handleFields} id="loginEmail"></input>
-                <label>Username</label>
-                <input onChange={this.handleFields} id="loginUsername"></input>
-                <button onClick={this.handleSubmit}>Log In</button>
-                <button onClick={this.registerButton} >Register</button>
+            <div className="has-text-centered">
+                <label>Email</label><br />
+                <input onChange={this.handleFields} id="loginEmail" placeholder="email@email.com"></input><br />
+                <label>Username</label><br />
+                <input onChange={this.handleFields} id="loginUsername" placeholder="Username"></input><br />
+                <button className="button is-primary is-outlined" onClick={this.handleSubmit}>Log In</button>
+                <button className="button is-primary is-outlined" onClick={this.registerButton} >Register</button>
             </div>
         )
     }

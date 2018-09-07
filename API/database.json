@@ -42,11 +42,18 @@
       "userId": 4
     },
     {
-      "title": "new",
-      "date": "2018-09-26",
-      "location": "new",
+      "title": "event",
+      "date": "",
+      "location": "",
       "userId": 3,
       "id": 2
+    },
+    {
+      "title": "new",
+      "date": "",
+      "location": "",
+      "userId": 3,
+      "id": 3
     }
   ]
 }

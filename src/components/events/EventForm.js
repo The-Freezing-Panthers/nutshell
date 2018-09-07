@@ -38,8 +38,7 @@ export default class EventForm extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <fieldset>
+            <div className="box">
                     <label for="new-event-date">Date:</label>
                     <input  type="date" id="newDate" onChange={this.handleFieldChange}/><br />
                     <label for="new-event-title">Event Name:</label>
@@ -47,8 +46,7 @@ export default class EventForm extends Component {
                     <label for="new-event-location">Event Location:</label>
                     <input type="text" id="newLocation"onChange={this.handleFieldChange}/><br />
                     <button onClick={this.constructNewEvent}>Add New Event</button>
-                </fieldset>
-            </React.Fragment>
+            </div>
         )
     }
 }

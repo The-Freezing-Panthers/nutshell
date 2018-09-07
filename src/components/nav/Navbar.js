@@ -19,26 +19,31 @@ export default class Navbar extends Component {
         if (this.props.activeUser !== "" || null) {
             return (
                 <div>
-                    <a href="logout" onClick={this.logout}>Logout</a>
+                    <button className="button is-primary is-inverted is-outlined" href="logout" onClick={this.logout}>Logout</button>
                 </div>
             )
         }
         else {
             return (
                 <div>
-                    <a href="login" onClick={this.login}>Login</a>
+                    <button className="button is-primary is-inverted is-outlined" href="login" onClick={this.login}>Login</button>
                 </div>
             )
         }
     }
     render() {
         return (
-            <nav className="navbar">
+            <nav className="navbar is-primary">
                 <ul>
-                    <li>Nutshell</li>
-                    <div> {this.LoginLogout()} </div>
+                    <div class="navbar-brand">
+                    <div class="navbar-item">Nutshell</div>
+                    </div>
+                    <div className="navbar-end">
+                    <div class="navbar-item"> {this.LoginLogout()} </div>
+                    </div>
                 </ul>
             </nav>
+            
         )
     }
 }

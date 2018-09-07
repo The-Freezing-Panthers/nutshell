@@ -55,10 +55,10 @@ export default class MainPage extends Component {
     }
 
     deleteMessage = messageID => DataManager.deleteData.deleteMessage(messageID)
-            .then(() => DataManager.getData.getMessages())
-            .then(messages => this.setState({
-                messages: messages
-            }))
+        .then(() => DataManager.getData.getMessages())
+        .then(messages => this.setState({
+            messages: messages
+        }))
 
 
 
@@ -82,21 +82,28 @@ export default class MainPage extends Component {
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column is-5 is-offset-1 box">
+                        <EventList
+                            className=""
+                            events={this.state.events}
+                            addEvent={this.addEvent}
+                            deleteEvent={this.deleteEvent}
+                            editEvent={this.editEvent}
+                            activeUser={this.props.activeUser}
+                        />
+                    </div>
+                    <div className="column is-5">
+                        <MessageList
+                            messages={this.state.messages}
+                            addMessage={this.addMessage}
+                            editMessage={this.editMessage}
+                            deleteMessage={this.deleteMessage}
+                            activeUsername={this.props.activeUsername}
+                        />
+                    </div>
 
-                <EventList
-                    events={this.state.events}
-                    addEvent={this.addEvent}
-                    deleteEvent={this.deleteEvent}
-                    editEvent={this.editEvent}
-                    activeUser={this.props.activeUser}
-                />
-                <MessageList
-                    messages={this.state.messages}
-                    addMessage={this.addMessage}
-                    editMessage={this.editMessage}
-                    deleteMessage={this.deleteMessage}
-                    activeUsername={this.props.activeUsername}
-                />
+                </div>
                 <ArticleForm />
                 <Friends activeUser={this.props.activeUser} />
             </div>
