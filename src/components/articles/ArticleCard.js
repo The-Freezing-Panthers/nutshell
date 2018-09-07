@@ -8,9 +8,14 @@ export default class ArticleCard extends Component {
         return (
             <div>
             {/* {this.props.article} */}
-            article should display here or else broken
-            {this.props.article}
-            <button onClick={() => DataManager.deleteData.deleteArticle(this.props.article.id)}>Remove Article
+            {this.props.article.title}<br />
+            {this.props.article.synopsis}<br />
+            {this.props.article.url}<br />
+            {this.props.article.date}<br />
+            {this.props.article.id}<br />
+
+
+            <button onClick={() => this.props.deleteArticle(this.props.article.id)}>Remove Article
             </button>
             </div>
         )

@@ -47,7 +47,20 @@ export default class MainPage extends Component {
             messages: messages
         }))
 
-        
+        // I needed this here so I could change state and update page when article deleted
+    deleteArticle = article => DataManager.deleteData.deleteArticle(article)
+        .then(() => DataManager.getData.getArticles())
+        .then(article => this.setState({
+            articles: article
+        }))
+
+        addArticle = article => DataManager.saveData.saveArticle(article)
+        .then(() => DataManager.getData.getArticles())
+        .then(articles => this.setState({
+            articles: articles
+        }))
+
+    
     componentDidMount() {
         const newState = {}
 
@@ -85,8 +98,13 @@ export default class MainPage extends Component {
                 {/* does there need to be a condition to check if articles is empty? */}
                 <ArticleList 
                     articles={this.state.articles}
+                    deleteArticle={this.deleteArticle}
                 />
-                <ArticleForm />
+                <ArticleForm 
+                    articles={this.state.articles}
+                    addArticle={this.addArticle}
+                    // constructNewArticle={this.constructNewArticle}
+                />
 
                 <Friends activeUser={this.props.activeUser}/>
             </div>

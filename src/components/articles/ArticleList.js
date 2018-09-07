@@ -12,11 +12,12 @@ export default class ArticleList extends Component {
                 <section>
                     {
                         this.props.articles.map(article => (
-                            <ArticleCard key={article.id}
-                            title={article.title}
-                            synopsis={article.synopsis}
-                            date={article.date}
-                            id={article.id} />
+                            <ArticleCard 
+                            key={article.id}
+                            article={article} 
+                            deleteArticle={this.props.deleteArticle}
+                            />
+
                         ))
                     }     
                 </section>

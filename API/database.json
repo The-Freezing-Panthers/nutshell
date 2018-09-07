@@ -19,6 +19,11 @@
       "email": "me",
       "username": "me",
       "id": 4
+    },
+    {
+      "email": "nicky@nicky.com",
+      "username": "nicky",
+      "id": 5
     }
   ],
   "tasks": [],
@@ -41,6 +46,11 @@
       "content": "oh hai",
       "sender": "me",
       "id": 2
+    },
+    {
+      "content": "i can haz cheeseburger?",
+      "sender": "nicky",
+      "id": 3
     }
   ],
   "articles": [],
