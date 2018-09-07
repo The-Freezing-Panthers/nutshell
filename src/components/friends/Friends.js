@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DataManager from '../../DataManager'
 import FriendDisplay from './FriendDisplayer';
+import MutualFriend from './MutualFriend';
 
 
 export default class Friends extends Component {
@@ -9,6 +10,7 @@ export default class Friends extends Component {
         searching: false,
         addFriend: false,
         friends: [],
+        acceptedFriend: [],
         addedFriend: false,
         deleted: false,
         dataLoaded: false
@@ -27,10 +29,16 @@ export default class Friends extends Component {
         fetch(`http://localhost:8088/friends?friendUserId=${userId}`)
             .then(r => r.json())
             .then(result => {
-                this.setState({
-                    friends: result,
-                    dataLoaded: true
-                })
+                fetch(`http://localhost:8088/friends?otherFriendId=${userId}&mutual=true`)
+                    .then(r => r.json())
+                    .then(accepted => {
+
+                        this.setState({
+                            friends: result,
+                            acceptedFriend: accepted,
+                            dataLoaded: true
+                        })
+                    })
 
             })
     }
@@ -58,7 +66,8 @@ export default class Friends extends Component {
                     otherFriendId: friendId.id,
                     friendUserId: currentUser.userId,
                     otherFriendName: friendId.username,
-                    friendUsername: currentUser.username
+                    friendUsername: currentUser.username,
+                    mutual: false
                 }
                 fetch(`http://localhost:8088/friends?frienduserId=${currentUser.userId}&otherFriendId=${friendId.id}`)
                     .then(r => r.json())
@@ -74,7 +83,7 @@ export default class Friends extends Component {
                                         searching: false,
                                         searchQuery: "",
                                         addedFriend: true,
-                                        addFriend:false,
+                                        addFriend: false,
                                     })
                                 ).then(() => {
                                     this.displayFriends()
@@ -100,7 +109,7 @@ export default class Friends extends Component {
         DataManager.getData.searchUsername(friend)
             .then(result => {
                 if (result.length) {
-                    
+
                     this.setState({
                         addFriend: true
                     })
@@ -150,8 +159,8 @@ export default class Friends extends Component {
             <div>
                 <button onClick={this.searching}>Search for Friends</button>
                 {this.friendFinder()}
-                <FriendDisplay handleDelete={this.handleDelete} activeUser={this.props.activeUser} dataLoaded={this.state.dataLoaded} friends={this.state.friends} markDelete={this.markDelete} />
-
+                <FriendDisplay acceptedFriend={this.state.acceptedFriend} handleDelete={this.handleDelete} activeUser={this.props.activeUser} dataLoaded={this.state.dataLoaded} friends={this.state.friends} markDelete={this.markDelete} />
+                <MutualFriend />
             </div>
         )
     }

@@ -19,6 +19,11 @@
       "email": "me",
       "username": "me",
       "id": 4
+    },
+    {
+      "email": "jack@me.com",
+      "username": "jack",
+      "id": 5
     }
   ],
   "tasks": [],
@@ -29,7 +34,15 @@
       "otherFriendName": "george",
       "friendUsername": "jeremiah",
       "id": 1,
-      "mutual": false
+      "mutual": true
+    },
+    {
+      "otherFriendId": 5,
+      "friendUserId": 2,
+      "otherFriendName": "jack",
+      "friendUsername": "george",
+      "mutual": true,
+      "id": 2
     }
   ],
   "messages": [
