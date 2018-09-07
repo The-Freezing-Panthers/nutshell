@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import EventList from './events/EventList';
 import DataManager from '../DataManager';
 import ArticleForm from './articles/ArticleForm';
+import ArticleList from './articles/ArticleList';
 import Friends from './friends/Friends';
 import MessageList from './messages/messagesList'
 
@@ -80,7 +81,11 @@ export default class MainPage extends Component {
                     addMessage={this.addMessage}
                     activeUsername={this.props.activeUsername}
                 />
+
+                {/* does there need to be a condition to check if articles is empty? */}
+                <ArticleList />
                 <ArticleForm />
+
                 <Friends activeUser={this.props.activeUser}/>
             </div>
         )
