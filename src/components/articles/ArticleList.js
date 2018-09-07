@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 
 export default class ArticleList extends Component {
+
     render () {
         return (
             <div>
