@@ -1,6 +1,6 @@
 //Purpose: HTML representation of each individual article
 import React, { Component } from "react"
-import DataManager from '../../DataManager'
+
 
 export default class ArticleCard extends Component {
 

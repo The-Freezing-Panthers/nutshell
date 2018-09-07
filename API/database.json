@@ -21,9 +21,14 @@
       "id": 4
     },
     {
-      "email": "nicky@nicky.com",
-      "username": "nicky",
+      "email": "jack@me.com",
+      "username": "jack",
       "id": 5
+    },
+    {
+      "email": "jose@me.com",
+      "username": "jose",
+      "id": 6
     }
   ],
   "tasks": [],
@@ -61,9 +66,28 @@
       "id": 4
     }
   ],
-  
-  "messages": [],
-  
+  "messages": [
+    {
+      "content": "new",
+      "sender": "j",
+      "id": 1
+    },
+    {
+      "content": "oh hai",
+      "sender": "me",
+      "id": 2
+    },
+    {
+      "content": "YO!",
+      "sender": "jack",
+      "id": 3
+    },
+    {
+      "content": "turd nuggets!",
+      "sender": "j",
+      "id": 4
+    }
+  ],
   "articles": [],
   "events": [
     {
@@ -74,9 +98,9 @@
       "userId": 4
     },
     {
-      "title": "new",
-      "date": "2018-09-26",
-      "location": "new",
+      "title": "better party",
+      "date": "",
+      "location": "cooler house",
       "userId": 3,
       "id": 2
     }
