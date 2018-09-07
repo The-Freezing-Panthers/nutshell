@@ -33,7 +33,32 @@
       "friendUserId": 1,
       "otherFriendName": "george",
       "friendUsername": "jeremiah",
-      "id": 1
+      "id": 1,
+      "mutual": true
+    },
+    {
+      "otherFriendId": 5,
+      "friendUserId": 2,
+      "otherFriendName": "jack",
+      "friendUsername": "george",
+      "mutual": true,
+      "id": 2
+    },
+    {
+      "otherFriendId": 2,
+      "friendUserId": 6,
+      "otherFriendName": "george",
+      "friendUsername": "jose",
+      "mutual": true,
+      "id": 3
+    },
+    {
+      "otherFriendId": 3,
+      "friendUserId": 2,
+      "otherFriendName": "j",
+      "friendUsername": "george",
+      "mutual": false,
+      "id": 4
     }
   ],
   
