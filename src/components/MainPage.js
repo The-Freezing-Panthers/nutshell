@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import EventList from './events/EventList';
 import DataManager from '../DataManager';
 import ArticleForm from './articles/ArticleForm';
+import ArticleList from './articles/ArticleList';
 import Friends from './friends/Friends';
 import MessageList from './messages/messagesList'
 
@@ -46,6 +47,19 @@ export default class MainPage extends Component {
             messages: messages
         }))
 
+        // I needed this here so I could change state and update page when article deleted
+    deleteArticle = article => DataManager.deleteData.deleteArticle(article)
+        .then(() => DataManager.getData.getArticles())
+        .then(article => this.setState({
+            articles: article
+        }))
+
+        addArticle = article => DataManager.saveData.saveArticle(article)
+        .then(() => DataManager.getData.getArticles())
+        .then(articles => this.setState({
+            articles: articles
+        }))
+
     editMessage = (messageID, editedMessage) => {
         DataManager.editData.editMessage(messageID, editedMessage)
             .then(() => DataManager.getData.getMessages())
@@ -60,8 +74,6 @@ export default class MainPage extends Component {
                 messages: messages
             }))
 
-
-
     componentDidMount() {
         const newState = {}
 
@@ -69,8 +81,8 @@ export default class MainPage extends Component {
             .then(events => newState.events = events)
             //.then(() => DataManager.getData.getTasks())
             //.then(tasks => newState.tasks = tasks)
-            //.then(() => DataManager.getData.getArticles())
-            //.then(articles => newState.articles = articles)
+            .then(() => DataManager.getData.getArticles())
+            .then(articles => newState.articles = articles)
             //.then(() => DataManager.getData.getFriends())
             // .then(friends => newState.friends = friends)
             .then(() => DataManager.getData.getMessages())
@@ -97,8 +109,20 @@ export default class MainPage extends Component {
                     deleteMessage={this.deleteMessage}
                     activeUsername={this.props.activeUsername}
                 />
-                <ArticleForm />
+
+                {/* does there need to be a condition to check if articles is empty? */}
+                <ArticleList 
+                    articles={this.state.articles}
+                    deleteArticle={this.deleteArticle}
+                />
+                <ArticleForm 
+                    articles={this.state.articles}
+                    addArticle={this.addArticle}
+                    // constructNewArticle={this.constructNewArticle}
+                />
+
                 <Friends activeUser={this.props.activeUser} />
+
             </div>
         )
     }
