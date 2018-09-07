@@ -30,6 +30,7 @@ export default class MessagesList extends Component {
         return (
             <div className="messages box has-background-grey-lighter">
                 <h4 className="is-size-4">Messages</h4>
+                <hr />
                 <section>
                     {
                         this.props.messages.map(message =>
@@ -44,11 +45,9 @@ export default class MessagesList extends Component {
                     }
                 </section>
                     <hr />
-                <div className="has-background-grey	message-form">
-                    <label for="content">New Message: </label>
-                    <input type="text" id="content" onChange={this.handleFieldChange} /><br />
+                    <label htmlFor="content">New Message: </label>
+                    <input type="text" id="content" onChange={this.handleFieldChange}/>
                     <button className="button is-small is-primary" onClick={this.constructNewMessage}>Send Message</button>
-                </div>
             </div>
         )
     }

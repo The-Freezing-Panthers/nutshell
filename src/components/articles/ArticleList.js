@@ -9,6 +9,7 @@ export default class ArticleList extends Component {
         return (
             <div>
                 <h4 className="is-size-4">Articles</h4>
+                <hr />
                 <section>
                     {
                         this.props.articles.map(article => (
@@ -19,7 +20,8 @@ export default class ArticleList extends Component {
                             />
 
                         ))
-                    }     
+                    }    
+                    <br /> 
                 </section>
             </div>
         );

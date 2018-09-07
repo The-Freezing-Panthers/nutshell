@@ -6,6 +6,8 @@ import ArticleForm from './articles/ArticleForm';
 import ArticleList from './articles/ArticleList';
 import Friends from './friends/Friends';
 import MessageList from './messages/messagesList'
+import TaskList from './tasks/TaskList';
+import TaskForm from './tasks/TaskForm';
 
 export default class MainPage extends Component {
     constructor(props) {
@@ -60,6 +62,18 @@ export default class MainPage extends Component {
             articles: articles
         }))
 
+    deleteTask = task => DataManager.deleteData.deleteTask(task)
+        .then(() => DataManager.getData.getTasks())
+        .then(task => this.setState({
+            tasks: task
+        }))
+
+    addTask = task => DataManager.saveData.saveTask(task)
+        .then(() => DataManager.getData.getTasks())
+        .then(tasks => this.setState({
+            tasks: tasks
+        }))
+
     editMessage = (messageID, editedMessage) => {
         DataManager.editData.editMessage(messageID, editedMessage)
             .then(() => DataManager.getData.getMessages())
@@ -79,8 +93,8 @@ export default class MainPage extends Component {
 
         DataManager.getData.getEvents(this.props.activeUser)
             .then(events => newState.events = events)
-            //.then(() => DataManager.getData.getTasks())
-            //.then(tasks => newState.tasks = tasks)
+            .then(() => DataManager.getData.getTasks())
+            .then(tasks => newState.tasks = tasks)
             .then(() => DataManager.getData.getArticles())
             .then(articles => newState.articles = articles)
             //.then(() => DataManager.getData.getFriends())
@@ -88,7 +102,7 @@ export default class MainPage extends Component {
             .then(() => DataManager.getData.getMessages())
             .then(messages => newState.messages = messages)
             .then(() => this.setState(newState))
-            .then(() => console.log(this.state))
+        // .then(() => console.log(this.state))
     }
 
     render() {
@@ -132,6 +146,20 @@ export default class MainPage extends Component {
                         <Friends activeUser={this.props.activeUser} />
                     </div>
                 </div>
+                <div className="columns">
+                    <div className="column is-half is-offset-3 box has-background-grey-lighter">
+                        <TaskList
+                            tasks={this.state.tasks}
+                            deleteTask={this.deleteTask}
+                        />
+
+                        <TaskForm
+                            tasks={this.setState.tasks}
+                            addTask={this.addTask}
+                        />
+                    </div>
+                </div>
+
             </div>
         )
     }

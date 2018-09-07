@@ -9,15 +9,11 @@ import './Event.css'
 export default class EventList extends Component {
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div className="box has-background-grey-lighter	">
-                <div className="">
-                    <h4 className="is-size-4">Events</h4>
-                    <EventForm {...this.props}
-                    addEvent={this.props.addEvent}
-                    activeUser={this.props.activeUser}/>
-                </div>
+                <h4 className="is-size-4">Events</h4>
+                <hr />
                 <section className="">
                 <h5 className="is-size-5">Your Events</h5>
                     {
@@ -31,6 +27,11 @@ export default class EventList extends Component {
                         )
                     }
                 </section>
+                <div className="">
+                    <EventForm {...this.props}
+                    addEvent={this.props.addEvent}
+                    activeUser={this.props.activeUser}/>
+                </div>
             </div>
         )
     }

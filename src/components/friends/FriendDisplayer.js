@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FriendCard from './FriendCard';
-import DataManager from '../../DataManager'
 import AcceptedFriendCard from './AcceptedFriendCard'
 export default class FriendDisplay extends Component {
 
