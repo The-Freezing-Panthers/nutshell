@@ -46,7 +46,7 @@ export default class MessagesList extends Component {
                     <hr />
                     <label for="content">New Message: </label>
                     <input type="text" id="content" onChange={this.handleFieldChange}/>
-                    <button onClick={this.constructNewMessage}>Send Message</button>
+                    <button className="button is-small is-primary is-outlined is-inverted" onClick={this.constructNewMessage}>Send Message</button>
             </div>
         )
     }

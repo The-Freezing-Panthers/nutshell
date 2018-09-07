@@ -45,7 +45,7 @@ export default class EventForm extends Component {
                     <input  type="text" id="newTitle"onChange={this.handleFieldChange}/><br />
                     <label for="new-event-location">Event Location:</label>
                     <input type="text" id="newLocation"onChange={this.handleFieldChange}/><br />
-                    <button onClick={this.constructNewEvent}>Add New Event</button>
+                    <button className="button is-small is-primary" onClick={this.constructNewEvent}>Add New Event</button>
             </div>
         )
     }

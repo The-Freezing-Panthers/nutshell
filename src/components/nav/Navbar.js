@@ -36,14 +36,14 @@ export default class Navbar extends Component {
             <nav className="navbar is-primary">
                 <ul>
                     <div class="navbar-brand">
-                    <div class="navbar-item">Nutshell</div>
+                        <div class="navbar-item">Nutshell</div>
                     </div>
                     <div className="navbar-end">
-                    <div class="navbar-item"> {this.LoginLogout()} </div>
+                        <div class="navbar-item"> {this.LoginLogout()} </div>
                     </div>
                 </ul>
             </nav>
-            
+
         )
     }
 }
