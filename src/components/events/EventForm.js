@@ -29,25 +29,27 @@ export default class EventForm extends Component {
             userId: this.props.activeUser
         }
         this.props.addEvent(event)
-        .then(() => {
-            document.querySelector("#newDate").value = ""
-            document.querySelector("#newTitle").value = ""
-            document.querySelector("#newLocation").value = ""
-        })
+            .then(() => {
+                document.querySelector("#newDate").value = ""
+                document.querySelector("#newTitle").value = ""
+                document.querySelector("#newLocation").value = ""
+            })
     }
 
     render() {
         return (
             <React.Fragment>
-                <fieldset>
+                <div className="box has-background-grey has-text-white">
+                <h5 className="is-size5">Add New Event</h5>
+                <hr />
                     <label htmlFor="new-event-date">Date:</label>
                     <input  type="date" id="newDate" onChange={this.handleFieldChange}/><br />
                     <label htmlFor="new-event-title">Event Name:</label>
                     <input  type="text" id="newTitle"onChange={this.handleFieldChange}/><br />
                     <label htmlFor="new-event-location">Event Location:</label>
                     <input type="text" id="newLocation"onChange={this.handleFieldChange}/><br />
-                    <button onClick={this.constructNewEvent}>Add New Event</button>
-                </fieldset>
+                    <button className="button is-small is-primary" onClick={this.constructNewEvent}>Add New Event</button>
+                </div>
             </React.Fragment>
         )
     }

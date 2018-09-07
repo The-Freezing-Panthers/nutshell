@@ -45,7 +45,7 @@ export default class EventCard extends Component {
 
     render() {
         return (
-            <div key={this.props.event.id} id={this.props.event.id} className="eventCard">
+            <div key={this.props.event.id} id={this.props.event.id} className="box">
 
                 {(this.state.edit) ?
                     <div>
@@ -72,7 +72,7 @@ export default class EventCard extends Component {
                     <div>
                         <h3>{this.props.event.date} - {this.props.event.title}</h3>
                         <h4>Location: {this.props.event.location}</h4>
-                        <button onClick={() => this.props.deleteEvent(this.props.event.id)}>Delete Event</button>
+                        <button className="button is-small is-danger is-outlined" onClick={() => this.props.deleteEvent(this.props.event.id)}>Delete Event</button>
                     </div>
                 }
 
@@ -80,7 +80,7 @@ export default class EventCard extends Component {
                     <button onClick={this.constructNewEvent}
                         className="button">Save Event</button>
                     : <button onClick={() => this.handleEditClicked()}
-                        className="button">Edit Event</button>
+                        className="button is-small is-warning is-outlined is-inverted">Edit Event</button>
                 }
 
 

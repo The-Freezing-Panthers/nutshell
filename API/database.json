@@ -28,9 +28,14 @@
   ],
   "tasks": [
     {
-      "taskName": "take out the garbage",
+      "taskName": "",
       "date": "Fri Sep 07 2018",
-      "id": 3
+      "id": 1
+    },
+    {
+      "taskName": "stuff",
+      "date": "Fri Sep 07 2018",
+      "id": 2
     }
   ],
   "friends": [
@@ -47,7 +52,7 @@
       "friendUserId": 2,
       "otherFriendName": "jack",
       "friendUsername": "george",
-      "mutual": false,
+      "mutual": true,
       "id": 2
     },
     {
@@ -67,16 +72,19 @@
       "id": 4
     }
   ],
-  "messages": [],
-  "articles": [
+  "messages": [
     {
-      "title": "read a book",
-      "synopsis": "how toread a book i cant readmayne",
-      "url": "readdd",
-      "date": "Fri Sep 07 2018",
+      "content": "",
+      "sender": "j",
       "id": 1
+    },
+    {
+      "content": "",
+      "sender": "j",
+      "id": 2
     }
   ],
+  "articles": [],
   "events": [
     {
       "date": "2018-09-08",
@@ -86,9 +94,9 @@
       "userId": 4
     },
     {
-      "title": "new",
-      "date": "2018-09-26",
-      "location": "new",
+      "title": "",
+      "date": "",
+      "location": "",
       "userId": 3,
       "id": 2
     }

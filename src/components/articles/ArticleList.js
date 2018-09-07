@@ -8,7 +8,8 @@ export default class ArticleList extends Component {
     render () {
         return (
             <div>
-                <h3>Articles</h3>
+                <h4 className="is-size-4">Articles</h4>
+                <hr />
                 <section>
                     {
                         this.props.articles.map(article => (

@@ -14,7 +14,7 @@ export default class FriendCard extends Component {
 
     render() {
 
-        return (<div>
+        return (<div className="box">
             {this.cardBuilder()}
         </div>
         )

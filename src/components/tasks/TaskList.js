@@ -8,7 +8,8 @@ export default class TaskList extends Component {
     render () {
         return (
             <div>
-                <h3>Tasks</h3>
+                <h4 className="is-size-4">Tasks</h4>
+                <hr />
                 <section>
                     {
                         this.props.tasks.map(task => (

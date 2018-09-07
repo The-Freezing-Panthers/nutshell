@@ -44,9 +44,11 @@ export default class TaskForm extends Component {
    render() {
       return (
          <React.Fragment>
-            <form className="taskForm">
+            <form className="taskForm box has-background-grey has-text-white">
+            <h5 className="is-size5">Add New Event</h5>
+                    <hr />
                <div className="form-group">
-                  <label htmlFor="taskName">Task name</label>
+                  <label htmlFor="taskName">Task name: </label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
@@ -55,14 +57,14 @@ export default class TaskForm extends Component {
                </div>
 
                <div className="form-group">
-                  <label htmlFor="date">Date</label>
+                  <label htmlFor="date">Date: </label>
                   <input type="text" required="true"
                      className="form-control"
                      onChange={this.handleFieldChange}
                      id="date" value={this.state.date} />
                </div>
 
-               <button type="submit" onClick={this.constructNewTask} className="btn btn-primary">Submit</button>
+               <button type="submit" onClick={this.constructNewTask} className="button is-small is-primary">Submit</button>
             </form>
          </React.Fragment>
       )

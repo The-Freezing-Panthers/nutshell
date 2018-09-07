@@ -49,26 +49,26 @@ export default class MainPage extends Component {
             messages: messages
         }))
 
-        // I needed this here so I could change state and update page when article deleted
+    // I needed this here so I could change state and update page when article deleted
     deleteArticle = article => DataManager.deleteData.deleteArticle(article)
         .then(() => DataManager.getData.getArticles())
         .then(article => this.setState({
             articles: article
         }))
 
-        addArticle = article => DataManager.saveData.saveArticle(article)
+    addArticle = article => DataManager.saveData.saveArticle(article)
         .then(() => DataManager.getData.getArticles())
         .then(articles => this.setState({
             articles: articles
         }))
 
-        deleteTask = task => DataManager.deleteData.deleteTask(task)
+    deleteTask = task => DataManager.deleteData.deleteTask(task)
         .then(() => DataManager.getData.getTasks())
         .then(task => this.setState({
             tasks: task
         }))
 
-        addTask = task => DataManager.saveData.saveTask(task)
+    addTask = task => DataManager.saveData.saveTask(task)
         .then(() => DataManager.getData.getTasks())
         .then(tasks => this.setState({
             tasks: tasks
@@ -83,10 +83,10 @@ export default class MainPage extends Component {
     }
 
     deleteMessage = messageID => DataManager.deleteData.deleteMessage(messageID)
-            .then(() => DataManager.getData.getMessages())
-            .then(messages => this.setState({
-                messages: messages
-            }))
+        .then(() => DataManager.getData.getMessages())
+        .then(messages => this.setState({
+            messages: messages
+        }))
 
     componentDidMount() {
         const newState = {}
@@ -102,49 +102,63 @@ export default class MainPage extends Component {
             .then(() => DataManager.getData.getMessages())
             .then(messages => newState.messages = messages)
             .then(() => this.setState(newState))
-            // .then(() => console.log(this.state))
+        // .then(() => console.log(this.state))
     }
 
     render() {
         return (
             <div>
+                <div className="columns">
+                    <div className="column is-5 is-offset-1">
+                        <EventList
+                            className=""
+                            events={this.state.events}
+                            addEvent={this.addEvent}
+                            deleteEvent={this.deleteEvent}
+                            editEvent={this.editEvent}
+                            activeUser={this.props.activeUser}
+                        />
+                    </div>
+                    <div className="column is-5">
+                        <MessageList
+                            messages={this.state.messages}
+                            addMessage={this.addMessage}
+                            editMessage={this.editMessage}
+                            deleteMessage={this.deleteMessage}
+                            activeUsername={this.props.activeUsername}
+                        />
+                    </div>
+                </div>
+                {/* does there need to be a condition to check if articles is empty? */}
+                <div className="columns">
+                    <div className="column is-5 is-offset-1 box has-background-grey-lighter	">
+                        <ArticleList
+                            articles={this.state.articles}
+                            deleteArticle={this.deleteArticle}
+                        />
+                        <ArticleForm
+                            articles={this.state.articles}
+                            addArticle={this.addArticle}
+                        // constructNewArticle={this.constructNewArticle}
+                        />
+                    </div>
+                    <div className="column is-5 box has-background-grey-lighter">
+                        <Friends activeUser={this.props.activeUser} />
+                    </div>
+                </div>
+                <div className="columns">
+                    <div className="column is-half is-offset-3 box has-background-grey-lighter">
+                        <TaskList
+                            tasks={this.state.tasks}
+                            deleteTask={this.deleteTask}
+                        />
 
-                <EventList
-                    events={this.state.events}
-                    addEvent={this.addEvent}
-                    deleteEvent={this.deleteEvent}
-                    editEvent={this.editEvent}
-                    activeUser={this.props.activeUser}
-                />
-                <MessageList
-                    messages={this.state.messages}
-                    addMessage={this.addMessage}
-                    editMessage={this.editMessage}
-                    deleteMessage={this.deleteMessage}
-                    activeUsername={this.props.activeUsername}
-                />
-
-                <ArticleList 
-                    articles={this.state.articles}
-                    deleteArticle={this.deleteArticle}
-                />
-                <ArticleForm 
-                    articles={this.state.articles}
-                    addArticle={this.addArticle}
-                    // constructNewArticle={this.constructNewArticle}
-                />
-
-                <TaskList 
-                    tasks={this.state.tasks}
-                    deleteTask={this.deleteTask}
-                />
-
-                <TaskForm 
-                    tasks={this.setState.tasks}
-                    addTask={this.addTask}
-                />
-
-                <Friends activeUser={this.props.activeUser} />
+                        <TaskForm
+                            tasks={this.setState.tasks}
+                            addTask={this.addTask}
+                        />
+                    </div>
+                </div>
 
             </div>
         )

@@ -33,11 +33,11 @@ export default class Register extends Component {
 
     render() {
         return (
-            <div>
-                <label>Please create an Email and Username</label>
-                <input onChange={this.handleFields} id="registerEmail" placeholder="Email"></input>
-                <input onChange={this.handleFields} id="registerUsername" placeholder="Username"></input>
-                <button onClick={this.handleRegister}>Register</button>
+            <div className="has-text-centered">
+                <label>Please create an Email and Username</label><br />
+                <input onChange={this.handleFields} id="registerEmail" placeholder="Email"></input><br />
+                <input onChange={this.handleFields} id="registerUsername" placeholder="Username"></input><br />
+                <button className="button is-primary is-outlined" onClick={this.handleRegister}>Register</button>
 
             </div>
         )
